@@ -28,7 +28,7 @@ export default function Portfolio() {
   const prev = useCallback(() => setLightbox(i => (i - 1 + IMAGES.length) % IMAGES.length), [])
 
   return (
-    <section className="bg-dark-2 py-[100px]" id="portfolio">
+    <section className="bg-dark-2 py-14 md:py-[72px]" id="portfolio">
       <div className="max-w-[600px] mx-auto px-4 mb-12 text-center">
         <span className="section-label mb-3 block text-gold tracking-[0.25em] text-[10px] md:text-[11px]" data-reveal>
           Our Portfolio

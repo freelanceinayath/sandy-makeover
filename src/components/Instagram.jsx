@@ -11,7 +11,7 @@ const INSTA = [
 
 export default function Instagram() {
   return (
-    <section className="bg-dark py-[100px]" id="instagram">
+    <section className="bg-dark py-14 md:py-[72px]" id="instagram">
       <div className="max-w-[600px] mx-auto px-4 text-center mb-12">
         <span className="section-label mb-3 block text-gold tracking-[0.25em] text-[10px] md:text-[11px]" data-reveal>
           @sandymakeover

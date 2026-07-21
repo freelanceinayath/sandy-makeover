@@ -6,7 +6,7 @@ const STEPS = [
 
 export default function Transformation() {
   return (
-    <section className="bg-dark-3 py-[100px]" id="transformation">
+    <section className="bg-dark-3 py-14 md:py-[72px]" id="transformation">
       <div className="max-w-[1200px] mx-auto px-6 md:px-8">
         <div className="text-center mb-12 max-w-[600px] mx-auto px-4">
           <span className="section-label mb-3 block text-gold tracking-[0.25em] text-[10px] md:text-[11px]" data-reveal>
@@ -34,11 +34,13 @@ export default function Transformation() {
                   </div>
                   <div className={`${i%2===0?'md:order-2':'md:order-1 md:text-right'}`}>
                     <h3 className={`font-serif text-[24px] font-medium mb-3 ${step.final?'text-gold':'text-cream'}`}>{step.title}</h3>
-                    <p className="font-sans text-[13px] font-light text-cream/75 leading-[1.7]">{step.desc}</p>
+                    <p className="font-sans text-[14px] font-light text-cream/85 leading-[1.7]">{step.desc}</p>
                   </div>
                 </div>
                 {i < STEPS.length - 1 && (
-                  <div className="text-center text-gold/30 text-[20px] my-1 select-none">↓</div>
+                  <div className="flex justify-center my-2">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 2v12M4 10l4 4 4-4" stroke="#C3A359" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" opacity="0.4"/></svg>
+                  </div>
                 )}
               </div>
             ))}

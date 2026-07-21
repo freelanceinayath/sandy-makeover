@@ -44,7 +44,7 @@ function ServiceCard({ service, delay }) {
       </div>
       <div className="p-7">
         <h3 className="font-serif text-[22px] font-medium text-cream mb-3">{service.name}</h3>
-        <p className="font-sans text-[13px] font-light text-cream/75 leading-[1.75] mb-6">{service.desc}</p>
+        <p className="font-sans text-[14px] font-light text-cream/85 leading-[1.75] mb-6">{service.desc}</p>
         <div className="pt-5 border-t border-border">
           <button onClick={() => window.dispatchEvent(new CustomEvent('open-booking-modal'))} id={`${service.id}-book-btn`}
             className="block w-full text-center font-sans text-[10px] font-semibold tracking-[0.18em] uppercase text-gold border border-gold/45 py-2.5 hover:bg-gold hover:text-dark transition-all duration-300">
@@ -58,7 +58,7 @@ function ServiceCard({ service, delay }) {
 
 export default function Services() {
   return (
-    <section className="bg-dark py-[100px]" id="services">
+    <section className="bg-dark py-14 md:py-[72px]" id="services">
       <div className="max-w-[1200px] mx-auto px-6 md:px-8">
         <div className="text-center mb-12 max-w-[600px] mx-auto px-4">
           <span className="section-label mb-3 block text-gold tracking-[0.25em] text-[10px] md:text-[11px]" data-reveal>

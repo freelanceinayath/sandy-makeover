@@ -1,6 +1,6 @@
 export default function Editorial() {
   return (
-    <section className="bg-dark py-[80px]" id="about">
+    <section className="bg-dark py-12 md:py-[56px]" id="about">
       <div className="max-w-[1100px] mx-auto px-6 md:px-8">
         
         {/* ── Beautifully styled stats panel (Luxury Clean UI/UX) ── */}

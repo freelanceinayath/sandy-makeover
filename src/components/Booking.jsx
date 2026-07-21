@@ -21,7 +21,7 @@ const FAQ = [
 
 export default function Booking() {
   return (
-    <section className="bg-dark-2 py-[100px]" id="booking">
+    <section className="bg-dark-2 py-14 md:py-[72px]" id="booking">
       <div className="max-w-[1200px] mx-auto px-6 md:px-8">
         <div className="text-center mb-12 max-w-[600px] mx-auto px-4">
           <span className="section-label mb-3 block text-gold tracking-[0.25em] text-[10px] md:text-[11px]" data-reveal>
@@ -49,7 +49,7 @@ export default function Booking() {
                   <div className="pb-10 flex-1">
                     <span className="font-sans text-[10px] font-medium tracking-[0.22em] uppercase text-gold block mb-1">{step.num}</span>
                     <h3 className={`font-serif text-[22px] font-medium mb-2 ${step.final ? 'text-gold' : 'text-cream'}`}>{step.title}</h3>
-                    <p className="font-sans text-[13px] font-light text-cream/75 leading-[1.75]">{step.desc}</p>
+                    <p className="font-sans text-[14px] font-light text-cream/85 leading-[1.75]">{step.desc}</p>
                   </div>
                 </div>
                 {i < STEPS.length - 1 && (

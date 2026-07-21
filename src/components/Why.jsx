@@ -9,7 +9,7 @@ const FEATURES = [
 
 export default function Why() {
   return (
-    <section className="bg-dark py-[80px] overflow-hidden" id="why">
+    <section className="bg-dark py-12 md:py-[56px] overflow-hidden" id="why">
       <div className="max-w-[1200px] mx-auto px-6 md:px-8">
         
         {/* Title */}

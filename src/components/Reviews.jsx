@@ -18,12 +18,12 @@ function ReviewCard({ r }) {
           <Star key={i} className="w-3.5 h-3.5 fill-gold text-gold" strokeWidth={0} />
         ))}
       </div>
-      <p className="font-serif text-[15px] italic text-cream/90 leading-[1.65] mb-6">{r.text}</p>
+      <p className="font-serif text-[16px] italic text-cream/90 leading-[1.65] mb-6">{r.text}</p>
       <div className="flex items-center gap-4">
         <div className="w-9 h-9 rounded-full bg-gold-gradient flex items-center justify-center font-script text-[18px] text-dark flex-shrink-0">{r.avatar}</div>
         <div>
           <strong className="font-sans text-[12px] font-semibold text-cream block">{r.name}</strong>
-          <small className="font-sans text-[10px] text-cream/60">{r.role}</small>
+          <small className="font-sans text-[11px] text-cream/75">{r.role}</small>
         </div>
       </div>
     </div>
@@ -32,7 +32,7 @@ function ReviewCard({ r }) {
 
 export default function Reviews() {
   return (
-    <section className="bg-dark-2 py-[100px] overflow-hidden" id="reviews">
+    <section className="bg-dark-2 py-14 md:py-[72px] overflow-hidden" id="reviews">
       <div className="max-w-[600px] mx-auto px-4 text-center mb-12">
         <span className="section-label mb-3 block text-gold tracking-[0.25em] text-[10px] md:text-[11px]" data-reveal>
           Client Love

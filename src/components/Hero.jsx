@@ -3,9 +3,9 @@ import { useEffect, useState, useRef } from 'react'
 const WA_LINK = 'https://wa.me/917092368305'
 
 const POLAROIDS = [
-  { src: '/hero_makeup_real.png', caption: 'the makeup', rotate: '-10deg', delay: 0.1 },
-  { src: '/hero_bride_real.png',  caption: 'the bride',  rotate: '2deg',   delay: 0.3, isCenter: true },
-  { src: '/hero_groom_real.png',  caption: 'the groom',  rotate: '8deg',   delay: 0.5 },
+  { src: '/hero_makeup_real.png', caption: 'the makeup', alt: 'Sandy Makeover – professional bridal makeup application', rotate: '-10deg', delay: 0.1 },
+  { src: '/hero_bride_real.png',  caption: 'the bride',  alt: 'Sandy Makeover – radiant bridal look',  rotate: '2deg',   delay: 0.3, isCenter: true },
+  { src: '/hero_groom_real.png',  caption: 'the groom',  alt: 'Sandy Makeover – groom styling',  rotate: '8deg',   delay: 0.5 },
 ]
 
 export default function Hero() {
@@ -52,7 +52,7 @@ export default function Hero() {
 
   return (
     <section id="home" ref={heroRef}
-      className="relative min-h-screen bg-dark flex flex-col items-center justify-center overflow-hidden pt-28 pb-20 px-6">
+      className="relative min-h-screen bg-dark flex flex-col items-center justify-center overflow-hidden pt-20 pb-12 md:pt-28 md:pb-20 px-6">
       
       {/* Cinematic dark vignette background */}
       <div className="absolute inset-0 bg-gradient-to-b from-dark via-dark-2 to-dark pointer-events-none" />
@@ -76,7 +76,7 @@ export default function Hero() {
               animationDelay: `${i * 0.6}s`,
             }}
           >
-            <img src={p.src} alt={p.caption} className="w-full aspect-square object-cover" />
+            <img src={p.src} alt={p.alt} loading={i === 0 ? 'eager' : 'lazy'} className="w-full aspect-square object-cover" />
             <div className="polaroid-caption">{p.caption}</div>
           </div>
         ))}
@@ -132,13 +132,14 @@ export default function Hero() {
         {/* Call to actions (Now placed above the subtitle) */}
         <div className={cls(step >= 5, 'flex justify-center items-center mb-8')}>
           <button onClick={() => window.dispatchEvent(new CustomEvent('open-booking-modal'))} id="hero-book-btn"
-            className="btn-outline-gold text-[9px] tracking-[0.24em] font-medium py-3 px-6 hover:bg-gold hover:text-dark transition-all duration-300">
+            className="btn-outline-gold text-[10px] tracking-[0.2em] font-semibold py-3.5 px-8 hover:bg-gold hover:text-dark transition-all duration-300"
+            aria-label="Reserve your bridal makeup date">
             Reserve Your Date
           </button>
         </div>
 
         {/* Subtitle (Now placed below the buttons) */}
-        <p className={cls(step >= 6, 'font-sans text-[14px] font-light text-cream/85 leading-[1.8] max-w-[360px] mx-auto')}>
+        <p className={cls(step >= 6, 'font-sans text-[16px] font-light text-cream/90 leading-[1.8] max-w-[360px] mx-auto')}>
           Luxury bridal makeup designed around your personality, traditions, and wedding story.
         </p>
       </div>

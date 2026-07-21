@@ -26,18 +26,19 @@ export default function FinalCTA() {
         <p className="font-script text-gold mt-1.5 text-[24px] sm:text-[30px] md:text-[36px] lg:text-[40px] leading-tight mb-8 reveal delay-100" data-reveal>
           Dream Wedding Look.
         </p>
-        <p className="font-sans text-[13px] font-light text-cream/80 mb-10 max-w-[360px] mx-auto leading-[1.8] reveal delay-200" data-reveal>
+        <p className="font-sans text-[14px] font-light text-cream/90 mb-10 max-w-[360px] mx-auto leading-[1.8] reveal delay-200" data-reveal>
           Every detail, every brushstroke, every strand — crafted for you alone.
         </p>
         <div className="reveal delay-300 flex flex-col sm:flex-row gap-4 justify-center items-center" data-reveal>
-          <button onClick={() => window.dispatchEvent(new CustomEvent('open-booking-modal'))} id="final-cta-btn" className="btn-outline-gold">
+          <button onClick={() => window.dispatchEvent(new CustomEvent('open-booking-modal'))} id="final-cta-btn" className="btn-outline-gold" aria-label="Reserve your bridal makeup date today">
             Reserve Your Date Today
           </button>
         </div>
-        <p className="font-sans text-[12px] text-cream/60 mt-6 reveal delay-400 flex items-center justify-center gap-1.5" data-reveal>
-          <Phone className="w-3.5 h-3.5 text-gold" strokeWidth={2} />
+        <p className="font-sans text-[13px] text-cream/75 mt-6 reveal delay-400 flex items-center justify-center gap-1.5" data-reveal>
+          <Phone className="w-3.5 h-3.5 text-gold" strokeWidth={2} aria-hidden="true" />
           <span>Call or WhatsApp:</span>
-          <a href="tel:+917092368305" className="text-gold hover:text-gold-light transition-colors border-b border-gold/20 ml-1">
+          <a href="tel:+917092368305" className="text-gold hover:text-gold-light transition-colors border-b border-gold/20 ml-1"
+            aria-label="Call Sandy Makeover at +91 70923 68305">
             +91 70923 68305
           </a>
         </p>

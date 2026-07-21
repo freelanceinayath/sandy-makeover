@@ -15,6 +15,8 @@
 
   body {
     font-family: 'Poppins', system-ui, sans-serif;
+    font-size: 16px;
+    line-height: 1.65;
     background-color: #1E0B10;
     color: #F5EFE5;
     overflow-x: hidden;
@@ -171,6 +173,10 @@
     color: #1E0B10;
     box-shadow: 0 8px 32px rgba(195,163,89,0.35);
   }
+  .btn-outline-gold:focus-visible {
+    outline: 2px solid #C3A359;
+    outline-offset: 3px;
+  }
 
   .btn-gold-solid {
     display: inline-flex;
@@ -192,6 +198,18 @@
     background: #A0823E;
     box-shadow: 0 8px 32px rgba(195,163,89,0.4);
     transform: translateY(-2px);
+  }
+  .btn-gold-solid:focus-visible {
+    outline: 2px solid #D2BA82;
+    outline-offset: 3px;
+  }
+
+  /* ── Focus rings for all interactive elements ── */
+  button:focus-visible,
+  a:focus-visible {
+    outline: 2px solid #C3A359;
+    outline-offset: 3px;
+    border-radius: 2px;
   }
 
   /* ── 3D Card Flip utilities ── */
