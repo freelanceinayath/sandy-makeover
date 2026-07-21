@@ -1,0 +1,13 @@
+/* TEAM */
+  Developer: Inayath Basha
+  Role: Frontend Developer, Shopify Developer, UI/UX Designer
+  Location: Erode, Tamil Nadu, India
+  Contact: Inayathbasha434@gmail.com
+  Twitter: @inayathbasha
+  GitHub: inayathbasha
+
+/* SITE */
+  Standards: HTML5, CSS3, ES6, WAI-ARIA
+  Components: React, Vite, Tailwind CSS, Framer Motion, GSAP
+  Language: English
+  Doctype: HTML5

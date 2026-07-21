@@ -1,0 +1,31 @@
+{
+  "short_name": "Inayath Basha",
+  "name": "Inayath Basha | Shopify Developer & Web Designer",
+  "description": "Professional portfolio of Inayath Basha, specialized in Shopify Development, React, and UI/UX Design.",
+  "categories": ["portfolio", "design", "development", "ecommerce"],
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "type": "image/svg+xml",
+      "sizes": "any",
+      "purpose": "any"
+    },
+    {
+      "src": "/favicon.svg",
+      "type": "image/svg+xml",
+      "sizes": "192x192",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/favicon.svg",
+      "type": "image/svg+xml",
+      "sizes": "512x512",
+      "purpose": "any"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#0a0f1e",
+  "theme_color": "#0a0f1e",
+  "display": "standalone",
+  "orientation": "portrait"
+}

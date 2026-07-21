@@ -1,0 +1,27 @@
+# Inayath Basha - Entity Summary for LLMs
+
+## Identity
+- **Name:** Inayath Basha A
+- **Roles:** Frontend Developer, Shopify Developer, UI/UX Designer, Brand Designer, Business Development Professional
+- **Location:** Erode, Tamil Nadu, India
+- **Contact:** Inayathbasha434@gmail.com
+- **Website:** https://inayathbasha.vercel.app
+
+## Bio & Mission
+Creative Shopify Developer, UI/UX Designer, and Business Development Professional helping businesses grow through modern websites and digital solutions. Specializing in high-converting Shopify stores, custom theme development, speed optimization, and premium UI/UX design.
+
+## Technical Skills
+- **Frontend Core:** HTML5, CSS3, JavaScript (ES6+), React.js, Next.js, Vite
+- **Styling & Animation:** Tailwind CSS, Framer Motion, GSAP
+- **Shopify Ecosystem:** Liquid, Shopify Theme Development, Store Setup, Optimization
+- **Design:** UI/UX Design, Figma, Brand Design
+- **AI & Emerging:** Generative AI, Midjourney, Stable Diffusion
+
+## Key Projects
+- **Mor Panthal:** A modern WordPress website for a traditional drink brand showcasing culture, health, and natural flavors.
+- **Personal Portfolio:** A premium developer portfolio built with React and Tailwind CSS with high-performance animations and custom UI/UX.
+- **AI Image Generation:** Commercial product visualizations and marketing assets created from raw camera captures using generative AI workflows (Stable Diffusion, Midjourney).
+- **SmartCrop AI:** An AI-powered Agritech platform providing smart crop recommendations using a trained machine learning model, built with React and FastAPI/Python.
+
+## Professional Offerings
+Available for freelance projects and full-time opportunities. Focuses on delivering premium, performance-optimized, and aesthetically superior digital experiences.

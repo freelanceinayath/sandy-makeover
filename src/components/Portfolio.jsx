@@ -1,0 +1,81 @@
+import { useState, useEffect, useCallback } from 'react'
+
+const IMAGES = [
+  { src: '/portfolio_groom_blue_front.jpg',   alt: 'Groom Styling - Navy Patterned Sherwani' },
+  { src: '/portfolio_groom_suit_front.jpg',   alt: 'Groom Styling - Gold Sequined Tuxedo' },
+  { src: '/portfolio_groom_suit.jpg',         alt: 'Groom Styling - Gold Tuxedo Profile' },
+  { src: '/portfolio_groom_blue_cuff.jpg',    alt: 'Groom Styling - Navy Sherwani Cuff Adjust' },
+  { src: '/portfolio_groom_gold_pearl.jpg',   alt: 'Groom Styling - Gold Sherwani & Pearls' },
+  { src: '/portfolio_groom_casual.jpg',       alt: 'Pre-wedding Groom Grooming Prep' },
+]
+
+export default function Portfolio() {
+  const [lightbox, setLightbox] = useState(null)
+
+  useEffect(() => {
+    if (lightbox === null) return
+    const onKey = (e) => {
+      if (e.key === 'Escape')     setLightbox(null)
+      if (e.key === 'ArrowRight') setLightbox(i => (i + 1) % IMAGES.length)
+      if (e.key === 'ArrowLeft')  setLightbox(i => (i - 1 + IMAGES.length) % IMAGES.length)
+    }
+    window.addEventListener('keydown', onKey)
+    document.body.style.overflow = 'hidden'
+    return () => { window.removeEventListener('keydown', onKey); document.body.style.overflow = '' }
+  }, [lightbox])
+
+  const next = useCallback(() => setLightbox(i => (i + 1) % IMAGES.length), [])
+  const prev = useCallback(() => setLightbox(i => (i - 1 + IMAGES.length) % IMAGES.length), [])
+
+  return (
+    <section className="bg-dark-2 py-[100px]" id="portfolio">
+      <div className="max-w-[1200px] mx-auto px-6 md:px-8 mb-14 text-center">
+        <p className="section-label mb-5" data-reveal>Our Portfolio</p>
+        <h2 className="font-serif font-light text-cream mb-2 reveal"
+          style={{ fontSize: 'clamp(32px,5vw,60px)' }} data-reveal>
+          Every Look,
+        </h2>
+        <h2 className="font-script text-gold reveal delay-100"
+          style={{ fontSize: 'clamp(38px,6vw,70px)' }} data-reveal>
+          A Masterpiece
+        </h2>
+      </div>
+
+      {/* Masonry grid */}
+      <div className="px-3 md:px-6 columns-2 md:columns-3 gap-3">
+        {IMAGES.map((img, i) => (
+          <div key={img.src}
+            className={`group relative overflow-hidden cursor-pointer mb-3 break-inside-avoid border border-border hover:border-border-light transition-all duration-500 reveal-scale ${i % 3 === 1 ? 'delay-100' : i % 3 === 2 ? 'delay-200' : ''}`}
+            data-reveal onClick={() => setLightbox(i)}>
+            <div className={`overflow-hidden img-zoom ${i % 3 === 1 ? 'aspect-[3/4]' : 'aspect-square'}`}>
+              <img src={img.src} alt={img.alt} loading="lazy" className="w-full h-full object-cover" />
+            </div>
+            <div className="absolute inset-0 bg-dark/50 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity duration-400">
+              <span className="font-sans text-[10px] tracking-[0.22em] uppercase text-cream border border-cream/40 px-5 py-2.5 translate-y-2 group-hover:translate-y-0 transition-transform duration-400">
+                View
+              </span>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Lightbox */}
+      {lightbox !== null && (
+        <div className="fixed inset-0 z-[9999] bg-[rgba(12,5,2,0.97)] flex items-center justify-center"
+          onClick={() => setLightbox(null)}>
+          <button className="absolute top-5 right-6 text-cream/40 hover:text-cream text-2xl" onClick={() => setLightbox(null)}>✕</button>
+          <button className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 w-11 h-11 border border-border text-cream/50 hover:border-gold hover:text-gold flex items-center justify-center text-2xl transition-all"
+            onClick={e => { e.stopPropagation(); prev() }}>‹</button>
+          <img src={IMAGES[lightbox].src} alt={IMAGES[lightbox].alt}
+            className="max-w-[88vw] max-h-[88vh] object-contain w-auto h-auto"
+            style={{ display:'block' }} onClick={e => e.stopPropagation()} />
+          <button className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 w-11 h-11 border border-border text-cream/50 hover:border-gold hover:text-gold flex items-center justify-center text-2xl transition-all"
+            onClick={e => { e.stopPropagation(); next() }}>›</button>
+          <span className="absolute bottom-6 left-1/2 -translate-x-1/2 font-sans text-[10px] tracking-[0.2em] text-cream/25">
+            {lightbox + 1} / {IMAGES.length}
+          </span>
+        </div>
+      )}
+    </section>
+  )
+}
