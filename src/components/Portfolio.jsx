@@ -68,6 +68,7 @@ export default function Portfolio() {
             onClick={e => { e.stopPropagation(); prev() }}>‹</button>
           <img src={IMAGES[lightbox].src} alt={IMAGES[lightbox].alt}
             className="max-w-[88vw] max-h-[88vh] object-contain w-auto h-auto"
+            loading="lazy" decoding="async"
             style={{ display:'block' }} onClick={e => e.stopPropagation()} />
           <button className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 w-11 h-11 border border-border text-cream/50 hover:border-gold hover:text-gold flex items-center justify-center text-2xl transition-all"
             onClick={e => { e.stopPropagation(); next() }}>›</button>

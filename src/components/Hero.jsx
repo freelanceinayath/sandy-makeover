@@ -52,14 +52,14 @@ export default function Hero() {
 
   return (
     <section id="home" ref={heroRef}
-      className="relative min-h-screen bg-dark flex flex-col items-center justify-center overflow-hidden pt-20 pb-12 md:pt-28 md:pb-20 px-6">
+      className="relative min-h-[85vh] md:min-h-screen bg-dark flex flex-col items-center justify-center overflow-hidden pt-16 pb-10 md:pt-24 md:pb-16 px-6">
       
       {/* Cinematic dark vignette background */}
       <div className="absolute inset-0 bg-gradient-to-b from-dark via-dark-2 to-dark pointer-events-none" />
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-gold/5 blur-[130px] pointer-events-none" />
 
       {/* ── Polaroid Stack (Responsive and perfectly bounded) ── */}
-      <div className={`relative w-full max-w-[340px] xs:max-w-[380px] sm:max-w-[420px] aspect-[4/3] mx-auto mb-10 transition-all duration-1000 ${
+      <div className={`relative w-full max-w-[300px] xs:max-w-[340px] sm:max-w-[380px] aspect-[4/3] mx-auto mb-6 transition-all duration-1000 ${
         step >= 1 ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
       }`}>
         {POLAROIDS.map((p, i) => (
@@ -106,7 +106,7 @@ export default function Hero() {
         </h1>
 
         {/* Decorative Makeup Kit Crest (With exact cosmetic colors: blush pink, gold, and brown) */}
-        <div className={`flex justify-center my-6 transition-all duration-500 ${step >= 4 ? 'opacity-100' : 'opacity-0'}`}>
+        <div className={`flex justify-center my-3 transition-all duration-500 ${step >= 4 ? 'opacity-100' : 'opacity-0'}`}>
           <svg width="56" height="56" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
             {/* Gold dotted background circle */}
             <circle cx="32" cy="32" r="22" stroke="#C3A359" strokeWidth="0.8" strokeDasharray="3 4" className="opacity-30" />

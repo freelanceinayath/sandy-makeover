@@ -31,6 +31,12 @@
 
   details > summary { list-style: none; }
   details > summary::-webkit-details-marker { display: none; }
+
+  /* Minimum 44×44px touch targets for all interactive controls */
+  button, [role="button"] {
+    min-height: 44px;
+    min-width: 44px;
+  }
 }
 
 @layer utilities {
@@ -92,6 +98,9 @@
   .delay-500 { transition-delay: 500ms; }
   .delay-600 { transition-delay: 600ms; }
   .delay-700 { transition-delay: 700ms; }
+
+  /* Duration helpers */
+  .duration-400 { transition-duration: 400ms; }
 
   /* ── Gold gradient ── */
   .bg-gold-gradient { background: linear-gradient(135deg, #C3A359, #A0823E); }

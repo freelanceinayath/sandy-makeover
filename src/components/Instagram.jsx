@@ -26,7 +26,7 @@ export default function Instagram() {
           id="instagram-follow-btn"
           className="inline-flex items-center gap-3 mt-7 font-sans text-[10px] font-medium tracking-[0.2em] uppercase text-gold border border-border-light px-7 py-3 hover:bg-gold hover:text-dark transition-all duration-300 reveal delay-200"
           data-reveal>
-          <img src="/instagram_logo.png" alt="Instagram Logo" className="w-[18px] h-[18px] object-contain rounded-md" />
+          <img src="/instagram_logo.png" alt="Instagram Logo" className="w-[18px] h-[18px] object-contain rounded-md" loading="lazy" decoding="async" />
           Follow on Instagram
         </a>
       </div>
