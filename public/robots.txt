@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 
 # Sitemaps
-Sitemap: https://inayathbasha.vercel.app/sitemap.xml
+Sitemap: https://sandy-makeover.vercel.app/sitemap.xml

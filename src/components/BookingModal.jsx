@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react'
-import { Check, ChevronLeft } from 'lucide-react'
 
 const WA_NUMBER = '917092368305'
 
@@ -145,10 +144,10 @@ Please send me a quotation. - Sandy Makeover`
                 <button onClick={handleNextMonth} className="text-gold hover:text-gold-light text-[18px] px-2 transition-colors">›</button>
               </div>
 
-               {/* Weekday Labels */}
+              {/* Weekday Labels */}
               <div className="grid grid-cols-7 gap-1 text-center mb-3">
                 {weekDays.map(day => (
-                  <span key={day} className="font-sans text-[9px] text-cream/55 font-semibold tracking-wider uppercase">{day}</span>
+                  <span key={day} className="font-sans text-[9px] text-cream/30 font-semibold tracking-wider uppercase">{day}</span>
                 ))}
               </div>
 
@@ -170,7 +169,7 @@ Please send me a quotation. - Sandy Makeover`
                           ? 'bg-gold text-[#1E0B10] font-semibold shadow-gold' 
                           : isPast 
                             ? 'text-cream/15 cursor-not-allowed' 
-                            : 'text-cream/85 hover:bg-gold/10 hover:text-gold border border-border/10 hover:border-gold/20'
+                            : 'text-cream/70 hover:bg-gold/10 hover:text-gold border border-transparent hover:border-gold/20'
                       }`}
                     >
                       {date.getDate()}
@@ -201,9 +200,8 @@ Please send me a quotation. - Sandy Makeover`
                 {/* Header */}
                 <div className="flex justify-between items-center mb-6">
                   <span className="font-serif italic text-[22px] tracking-wide text-gold">Booking Details</span>
-                  <button type="button" onClick={() => setIsFlipped(false)} className="font-sans text-[10px] tracking-widest text-gold hover:text-gold-light uppercase flex items-center gap-1 transition-colors">
-                    <ChevronLeft className="w-4 h-4" />
-                    <span>Back</span>
+                  <button type="button" onClick={() => setIsFlipped(false)} className="font-sans text-[9px] tracking-widest text-gold hover:text-gold-light uppercase flex items-center gap-1 transition-colors">
+                    ← Back
                   </button>
                 </div>
 
@@ -211,46 +209,46 @@ Please send me a quotation. - Sandy Makeover`
                 <div className="flex flex-col gap-4">
                   {/* Name */}
                   <div className="flex flex-col">
-                    <label className="font-sans text-[10px] font-semibold tracking-[0.18em] text-gold/90 uppercase mb-1">Your Name</label>
+                    <label className="font-sans text-[9px] font-semibold tracking-[0.18em] text-gold/60 uppercase mb-1">Your Name</label>
                     <input
                       type="text"
                       required
                       placeholder="Enter full name"
                       value={name}
                       onChange={e => setName(e.target.value)}
-                      className="bg-transparent border-b border-border/40 hover:border-gold/65 focus:border-gold text-cream/90 text-[13px] py-2 outline-none transition-all duration-300 placeholder:text-cream/45"
+                      className="bg-transparent border-b border-border hover:border-gold/50 focus:border-gold text-cream text-[13px] py-2 outline-none transition-all duration-300 placeholder:text-cream/20"
                     />
                   </div>
 
                   {/* Mobile Number */}
                   <div className="flex flex-col">
-                    <label className="font-sans text-[10px] font-semibold tracking-[0.18em] text-gold/90 uppercase mb-1">Mobile Number</label>
+                    <label className="font-sans text-[9px] font-semibold tracking-[0.18em] text-gold/60 uppercase mb-1">Mobile Number</label>
                     <input
                       type="tel"
                       required
                       placeholder="Enter active mobile number"
                       value={mobile}
                       onChange={e => setMobile(e.target.value)}
-                      className="bg-transparent border-b border-border/40 hover:border-gold/65 focus:border-gold text-cream/90 text-[13px] py-2 outline-none transition-all duration-300 placeholder:text-cream/45"
+                      className="bg-transparent border-b border-border hover:border-gold/50 focus:border-gold text-cream text-[13px] py-2 outline-none transition-all duration-300 placeholder:text-cream/20"
                     />
                   </div>
 
                   {/* Location */}
                   <div className="flex flex-col">
-                    <label className="font-sans text-[10px] font-semibold tracking-[0.18em] text-gold/90 uppercase mb-1">Wedding Location</label>
+                    <label className="font-sans text-[9px] font-semibold tracking-[0.18em] text-gold/60 uppercase mb-1">Wedding Location</label>
                     <input
                       type="text"
                       required
                       placeholder="Enter venue or city"
                       value={location}
                       onChange={e => setLocation(e.target.value)}
-                      className="bg-transparent border-b border-border/40 hover:border-gold/65 focus:border-gold text-cream/90 text-[13px] py-2 outline-none transition-all duration-300 placeholder:text-cream/45"
+                      className="bg-transparent border-b border-border hover:border-gold/50 focus:border-gold text-cream text-[13px] py-2 outline-none transition-all duration-300 placeholder:text-cream/20"
                     />
                   </div>
 
                   {/* Category Selection */}
                   <div className="flex flex-col">
-                    <label className="font-sans text-[10px] font-semibold tracking-[0.18em] text-gold/90 uppercase mb-2">Booking Category</label>
+                    <label className="font-sans text-[9px] font-semibold tracking-[0.18em] text-gold/60 uppercase mb-2">Booking Category</label>
                     <div className="grid grid-cols-3 gap-2">
                       {['bride', 'groom', 'both'].map(cat => (
                         <button
@@ -259,8 +257,8 @@ Please send me a quotation. - Sandy Makeover`
                           onClick={() => setCategory(cat)}
                           className={`py-2.5 text-[10px] font-sans border transition-all duration-300 tracking-[0.14em] uppercase ${
                             category === cat
-                              ? 'bg-gold/15 text-gold border-gold font-semibold shadow-luxury-sm'
-                              : 'bg-transparent border-border/40 text-cream/70 hover:border-gold/50'
+                              ? 'bg-gold/10 text-gold border-gold font-medium'
+                              : 'bg-transparent border-border text-cream/40 hover:border-gold/30'
                           }`}
                         >
                           {cat}
@@ -274,12 +272,12 @@ Please send me a quotation. - Sandy Makeover`
                     className="flex items-center gap-3 mt-2 cursor-pointer select-none"
                     onClick={() => setHairArtistry(h => !h)}
                   >
-                    <div className={`w-4.5 h-4.5 border flex items-center justify-center transition-all duration-300 ${
-                      hairArtistry ? 'border-gold bg-gold text-[#1E0B10]' : 'border-border/40 bg-transparent hover:border-gold/50'
+                    <div className={`w-4 h-4 border flex items-center justify-center transition-all duration-300 ${
+                      hairArtistry ? 'border-gold bg-gold text-[#1E0B10]' : 'border-border bg-transparent'
                     }`}>
-                      {hairArtistry && <Check className="w-3 h-3 text-dark" strokeWidth={3} />}
+                      {hairArtistry && <span className="text-[10px] font-bold">✓</span>}
                     </div>
-                    <span className="font-sans text-[11px] font-medium text-cream/85">
+                    <span className="font-sans text-[11px] text-cream/60">
                       Include Professional Hair Artistry
                     </span>
                   </div>
@@ -289,10 +287,9 @@ Please send me a quotation. - Sandy Makeover`
               {/* Submit Button */}
               <button
                 type="submit"
-                className="w-full py-4 bg-transparent border border-gold text-gold hover:bg-gold hover:text-[#1E0B10] font-sans text-[10px] font-semibold tracking-[0.24em] uppercase transition-all duration-300 shadow-luxury-md mt-8 flex items-center justify-center gap-2"
+                className="w-full py-4 bg-transparent border border-gold text-gold hover:bg-gold hover:text-[#1E0B10] font-sans text-[10px] font-semibold tracking-[0.24em] uppercase transition-all duration-300 shadow-luxury-md mt-8"
               >
-                <span>Complete Booking</span>
-                <Check className="w-3.5 h-3.5" strokeWidth={2.5} />
+                Complete Booking ✓
               </button>
             </form>
           </div>

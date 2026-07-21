@@ -3,30 +3,41 @@ import { Helmet } from 'react-helmet-async';
 export default function SEO({ 
   title, 
   description, 
-  canonical, 
+  canonical = '/', 
   type = 'website', 
+  image = '/hero_bride_real.png',
   schema 
 }) {
-  const siteUrl = 'https://inayathbasha.vercel.app';
-  const fullTitle = `${title} | Inayath Basha`;
+  const siteUrl = 'https://sandy-makeover.vercel.app';
+  
+  // Clean final metadata values
+  const pageTitle = title ? `${title} | Sandy Makeover` : 'Sandy Makeover | Luxury Bridal Makeup & Hair Artistry';
+  const pageDesc = description || 'Premium luxury bridal makeup, groom styling, and hair artistry. Timeless beauty crafted for your wedding story. Available citywide with home service.';
+  const shareImg = image.startsWith('http') ? image : `${siteUrl}${image}`;
+  const canonicalUrl = `${siteUrl}${canonical}`;
 
   return (
     <Helmet>
-      <title>{fullTitle}</title>
-      <meta name="description" content={description} />
-      {canonical && <link rel="canonical" href={`${siteUrl}${canonical}`} />}
+      {/* HTML Title & Description */}
+      <title>{pageTitle}</title>
+      <meta name="description" content={pageDesc} />
+      <link rel="canonical" href={canonicalUrl} />
       
-      {/* Open Graph */}
-      <meta property="og:title" content={fullTitle} />
-      <meta property="og:description" content={description} />
+      {/* Open Graph (Facebook, WhatsApp, Instagram, LinkedIn) */}
+      <meta property="og:title" content={pageTitle} />
+      <meta property="og:description" content={pageDesc} />
       <meta property="og:type" content={type} />
-      {canonical && <meta property="og:url" content={`${siteUrl}${canonical}`} />}
+      <meta property="og:url" content={canonicalUrl} />
+      <meta property="og:image" content={shareImg} />
+      <meta property="og:site_name" content="Sandy Makeover" />
       
-      {/* Twitter */}
-      <meta name="twitter:title" content={fullTitle} />
-      <meta name="twitter:description" content={description} />
-
-      {/* Structured Data */}
+      {/* Twitter Cards */}
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content={pageTitle} />
+      <meta name="twitter:description" content={pageDesc} />
+      <meta name="twitter:image" content={shareImg} />
+      
+      {/* Structured Data (Schema.org JSON-LD) */}
       {schema && (
         <script type="application/ld+json">
           {JSON.stringify(schema)}
