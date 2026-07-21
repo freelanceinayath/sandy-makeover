@@ -21,7 +21,7 @@ export default function SEO({
       {/* HTML Title & Description */}
       <title>{pageTitle}</title>
       <meta name="description" content={pageDesc} />
-      <meta name="google-site-verification" content="abcdefghijklmnopqrstuvwxyz1234567890" />
+      <meta name="google-site-verification" content="CiuKqMNOerOqszTdGT0RqFdHvNrL2BLVV3wEPY40pLQ" />
       <link rel="canonical" href={canonicalUrl} />
       
       {/* Open Graph (Facebook, WhatsApp, Instagram, LinkedIn) */}
