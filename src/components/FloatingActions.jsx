@@ -27,7 +27,7 @@ export default function FloatingActions() {
         <div className="px-4 py-3 bg-dark/95 backdrop-blur-xl border-t border-border">
           <button onClick={() => window.dispatchEvent(new CustomEvent('open-booking-modal'))} id="sticky-book-btn"
             className="block w-full py-4 bg-transparent border border-border-light text-cream text-center font-sans text-[11px] font-semibold tracking-[0.18em] uppercase hover:bg-gold hover:border-gold hover:text-dark transition-all duration-300">
-            Reserve Your Date
+            Book Your Date
           </button>
         </div>
       </div>

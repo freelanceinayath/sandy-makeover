@@ -31,7 +31,7 @@ export default function FinalCTA() {
         </p>
         <div className="reveal delay-300 flex flex-col sm:flex-row gap-4 justify-center items-center" data-reveal>
           <button onClick={() => window.dispatchEvent(new CustomEvent('open-booking-modal'))} id="final-cta-btn" className="btn-outline-gold" aria-label="Reserve your bridal makeup date today">
-            Reserve Your Date Today
+            Book Your Date Today
           </button>
         </div>
         <p className="font-sans text-[13px] text-cream/75 mt-6 reveal delay-400 flex items-center justify-center gap-1.5" data-reveal>

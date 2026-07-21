@@ -68,7 +68,7 @@ export default function Navbar() {
           {/* Desktop CTA */}
           <button onClick={() => window.dispatchEvent(new CustomEvent('open-booking-modal'))}
             className="hidden md:inline-flex items-center gap-2 font-sans text-[10px] font-semibold tracking-[0.2em] uppercase px-6 py-2.5 border border-border text-cream hover:bg-gold hover:border-gold hover:text-dark transition-all duration-300">
-            Reserve your date
+            Book your date
           </button>
 
           {/* Hamburger */}
@@ -93,7 +93,7 @@ export default function Navbar() {
           ))}
           <button onClick={() => { close(); window.dispatchEvent(new CustomEvent('open-booking-modal')) }}
             className="mt-4 btn-outline-gold">
-            Reserve Your Date
+            Book your date
           </button>
         </div>
       </div>
