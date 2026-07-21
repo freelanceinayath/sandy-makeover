@@ -60,16 +60,16 @@ export default function Services() {
   return (
     <section className="bg-dark py-[100px]" id="services">
       <div className="max-w-[1200px] mx-auto px-6 md:px-8">
-        <div className="text-center mb-16">
-          <p className="section-label mb-5" data-reveal>Featured Services</p>
-          <h2 className="font-serif font-light text-cream mb-2 reveal"
-            style={{ fontSize: 'clamp(32px,5vw,60px)' }} data-reveal>
+        <div className="text-center mb-12 max-w-[600px] mx-auto px-4">
+          <span className="section-label mb-3 block text-gold tracking-[0.25em] text-[10px] md:text-[11px]" data-reveal>
+            Featured Services
+          </span>
+          <h2 className="font-serif font-light text-cream leading-snug tracking-wide text-[28px] sm:text-[34px] md:text-[44px] lg:text-[48px] reveal" data-reveal>
             Crafted for Every
           </h2>
-          <h2 className="font-script text-gold reveal delay-100"
-            style={{ fontSize: 'clamp(38px,6vw,70px)' }} data-reveal>
+          <p className="font-script text-gold mt-1.5 text-[24px] sm:text-[30px] md:text-[36px] lg:text-[40px] leading-tight reveal delay-100" data-reveal>
             Wedding Moment
-          </h2>
+          </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

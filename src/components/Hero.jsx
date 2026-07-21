@@ -80,17 +80,17 @@ export default function Hero() {
         </p>
 
         {/* Title */}
-        <h1 className="mb-2 leading-none">
+        <h1 className="mb-2 leading-[1.1]">
           <span className={`block font-serif font-light text-cream italic transition-all duration-700 ${
             step >= 3 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
-          }`}
-          style={{ fontSize: 'clamp(42px, 9.5vw, 76px)', letterSpacing: '-0.02em', textShadow: '0 4px 18px rgba(10,4,2,0.65)' }}>
+          } text-[42px] sm:text-[60px] md:text-[76px] tracking-tight`}
+          style={{ textShadow: '0 4px 18px rgba(10,4,2,0.65)' }}>
             Radiance,
           </span>
           <span className={`block font-script text-gold mt-1 transition-all duration-700 delay-150 ${
             step >= 4 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
-          }`}
-          style={{ fontSize: 'clamp(38px, 8.5vw, 68px)', textShadow: '0 4px 18px rgba(10,4,2,0.5)' }}>
+          } text-[38px] sm:text-[54px] md:text-[68px] mt-1`}
+          style={{ textShadow: '0 4px 18px rgba(10,4,2,0.5)' }}>
             unforgettable.
           </span>
         </h1>

@@ -13,12 +13,16 @@ export default function Why() {
       <div className="max-w-[1200px] mx-auto px-6 md:px-8">
         
         {/* Title */}
-        <div className="text-center mb-12">
-          <p className="section-label mb-4" data-reveal>Why Choose Us</p>
-          <h2 className="font-serif font-light text-cream mb-1 reveal"
-            style={{ fontSize: 'clamp(28px,4.5vw,52px)' }} data-reveal>The Sandy Makeover</h2>
-          <h2 className="font-script text-gold reveal delay-100"
-            style={{ fontSize: 'clamp(34px,5.5vw,60px)' }} data-reveal>Difference</h2>
+        <div className="text-center mb-10 max-w-[600px] mx-auto px-4">
+          <span className="section-label mb-3 block text-gold tracking-[0.25em] text-[10px] md:text-[11px]" data-reveal>
+            Why Choose Us
+          </span>
+          <h2 className="font-serif font-light text-cream leading-snug tracking-wide text-[28px] sm:text-[34px] md:text-[44px] lg:text-[48px] reveal" data-reveal>
+            The Sandy Makeover
+          </h2>
+          <p className="font-script text-gold mt-1.5 text-[24px] sm:text-[30px] md:text-[36px] lg:text-[40px] leading-tight reveal delay-100" data-reveal>
+            Difference
+          </p>
         </div>
 
         {/* Swipeable Carousel for Mobile, Clean Grid for Desktop */}

@@ -17,15 +17,15 @@ export default function FinalCTA() {
 
       {/* Content */}
       <div className="relative z-10 text-center px-6 max-w-[680px]">
-        <p className="section-label light mb-6" data-reveal>Begin Your Story</p>
-        <h2 className="font-serif font-light text-cream mb-2 leading-[1.1] reveal"
-          style={{ fontSize:'clamp(34px,5.5vw,72px)' }} data-reveal>
+        <span className="section-label light mb-3 block text-gold-light tracking-[0.25em] text-[10px] md:text-[11px]" data-reveal>
+          Begin Your Story
+        </span>
+        <h2 className="font-serif font-light text-cream leading-snug tracking-wide text-[28px] sm:text-[34px] md:text-[44px] lg:text-[48px] reveal" data-reveal>
           Let's Create Your
         </h2>
-        <h2 className="font-script text-gold mb-8 reveal delay-100"
-          style={{ fontSize:'clamp(40px,6.5vw,84px)' }} data-reveal>
+        <p className="font-script text-gold mt-1.5 text-[24px] sm:text-[30px] md:text-[36px] lg:text-[40px] leading-tight mb-8 reveal delay-100" data-reveal>
           Dream Wedding Look.
-        </h2>
+        </p>
         <p className="font-sans text-[13px] font-light text-cream/80 mb-10 max-w-[360px] mx-auto leading-[1.8] reveal delay-200" data-reveal>
           Every detail, every brushstroke, every strand — crafted for you alone.
         </p>

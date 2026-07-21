@@ -23,12 +23,16 @@ export default function Booking() {
   return (
     <section className="bg-dark-2 py-[100px]" id="booking">
       <div className="max-w-[1200px] mx-auto px-6 md:px-8">
-        <div className="text-center mb-20">
-          <p className="section-label mb-5" data-reveal>How It Works</p>
-          <h2 className="font-serif font-light text-cream mb-2 reveal"
-            style={{ fontSize:'clamp(32px,5vw,60px)' }} data-reveal>Your Booking</h2>
-          <h2 className="font-script text-gold reveal delay-100"
-            style={{ fontSize:'clamp(38px,6vw,70px)' }} data-reveal>Journey</h2>
+        <div className="text-center mb-12 max-w-[600px] mx-auto px-4">
+          <span className="section-label mb-3 block text-gold tracking-[0.25em] text-[10px] md:text-[11px]" data-reveal>
+            How It Works
+          </span>
+          <h2 className="font-serif font-light text-cream leading-snug tracking-wide text-[28px] sm:text-[34px] md:text-[44px] lg:text-[48px] reveal" data-reveal>
+            Your Booking
+          </h2>
+          <p className="font-script text-gold mt-1.5 text-[24px] sm:text-[30px] md:text-[36px] lg:text-[40px] leading-tight reveal delay-100" data-reveal>
+            Journey
+          </p>
         </div>
 
         {/* Timeline */}
