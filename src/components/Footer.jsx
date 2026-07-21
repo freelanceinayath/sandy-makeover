@@ -6,7 +6,7 @@ const IG = 'https://instagram.com/sandymakeover'
 export default function Footer() {
   const year = new Date().getFullYear()
   return (
-    <footer className="bg-[#0A0402] text-cream pt-20 pb-8 border-t border-border">
+    <footer className="hidden md:block bg-[#0A0402] text-cream pt-20 pb-8 border-t border-border">
       <div className="max-w-[1200px] mx-auto px-6 md:px-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 pb-16 border-b border-border">
 

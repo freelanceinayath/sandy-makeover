@@ -111,10 +111,7 @@
     background: #F5EFE5;
     padding: 6px 6px 20px;
     box-shadow: 0 16px 36px rgba(0, 0, 0, 0.5);
-    border: 1.5px solid transparent;
-    background-clip: padding-box, border-box;
-    background-origin: padding-box, border-box;
-    background-image: linear-gradient(#F5EFE5, #F5EFE5), linear-gradient(135deg, #C3A359 0%, #E5C47F 50%, #8A6E2F 100%);
+    border: 1px solid rgba(255, 255, 255, 0.15);
     transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
   .polaroid img {
