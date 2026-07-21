@@ -11,8 +11,8 @@ export default function Ticker() {
     <div className="bg-dark-3 border-y border-border overflow-hidden select-none py-4">
       <div className="flex w-max animate-ticker hover:[animation-play-state:paused]">
         {ALL.map((item, i) => (
-          <span key={i} className={`font-sans text-[10px] font-light tracking-[0.22em] uppercase whitespace-nowrap px-5
-            ${item === '·' ? 'text-gold' : 'text-cream/30'}`}>
+          <span key={i} className={`font-sans text-[10px] font-medium tracking-[0.22em] uppercase whitespace-nowrap px-5
+            ${item === '·' ? 'text-gold' : 'text-cream/70'}`}>
             {item}
           </span>
         ))}

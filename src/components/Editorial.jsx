@@ -43,7 +43,7 @@ export default function Editorial() {
                 100%
               </span>
               <span className="font-sans text-[11px] font-semibold tracking-[0.16em] uppercase text-cream/85 mt-3.5 max-w-[130px] leading-relaxed">
-                Client Satisfied
+                Client Satisfaction
               </span>
             </div>
 

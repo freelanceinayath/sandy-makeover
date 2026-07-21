@@ -38,7 +38,7 @@ export default function Why() {
                   <Icon className="w-8 h-8" strokeWidth={1.5} />
                 </div>
                 <h3 className="font-serif text-[20px] font-medium text-gold mb-3">{f.title}</h3>
-                <p className="font-sans text-[13px] font-light text-cream/80 leading-relaxed">{f.desc}</p>
+                <p className="font-sans text-[14px] font-light text-cream/85 leading-relaxed">{f.desc}</p>
               </div>
             )
           })}

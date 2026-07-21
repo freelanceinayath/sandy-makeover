@@ -13,7 +13,7 @@ export default function PageLoader() {
   if (phase === 'done') return null
 
   return (
-    <div className={`fixed inset-0 z-[99999] bg-[#0A0402] flex items-center justify-center transition-opacity duration-700 ${
+    <div role="status" aria-label="Loading Sandy Makeover" aria-hidden={phase === 'exit'} className={`fixed inset-0 z-[99999] bg-[#0A0402] flex items-center justify-center transition-opacity duration-700 ${
       phase === 'exit' ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}>
       <div className={`flex flex-col items-center gap-1 transition-all duration-600 ${
         phase === 'enter' ? 'opacity-0 translate-y-4' : 'opacity-100 translate-y-0'}`}>

@@ -73,12 +73,14 @@ export default function CustomCursor() {
       {/* Gold dot */}
       <div
         ref={dotRef}
+        aria-hidden="true"
         className="fixed top-0 left-0 z-[99998] w-2 h-2 rounded-full bg-gold pointer-events-none opacity-0 transition-transform duration-[80ms]"
         style={{ willChange: 'transform' }}
       />
       {/* Ring */}
       <div
         ref={ringRef}
+        aria-hidden="true"
         className="fixed top-0 left-0 z-[99997] w-9 h-9 rounded-full border border-gold/40 pointer-events-none opacity-0"
         style={{ willChange: 'transform', transition: 'border-color 0.3s, opacity 0.3s' }}
       />

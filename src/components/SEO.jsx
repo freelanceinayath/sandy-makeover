@@ -11,7 +11,7 @@ export default function SEO({
   const siteUrl = 'https://sandy-makeover.vercel.app';
   
   // Clean final metadata values
-  const pageTitle = title ? `${title} | Sandy Makeover` : 'Sandy Makeover | Luxury Bridal Makeup & Hair Artistry';
+  const pageTitle = title && title !== 'Sandy Makeover' ? `${title} | Sandy Makeover` : 'Sandy Makeover — Luxury Bridal Makeup & Hair Artistry';
   const pageDesc = description || 'Premium luxury bridal makeup, groom styling, and hair artistry. Timeless beauty crafted for your wedding story. Available citywide with home service.';
   const shareImg = image.startsWith('http') ? image : `${siteUrl}${image}`;
   const canonicalUrl = `${siteUrl}${canonical}`;

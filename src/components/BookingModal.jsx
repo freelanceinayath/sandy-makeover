@@ -18,15 +18,36 @@ export default function BookingModal() {
   const [currentDate, setCurrentDate] = useState(new Date())
   const [daysArray, setDaysArray] = useState([])
 
-  // Listen for global open event
+  const [errorMsg, setErrorMsg] = useState('')
+
+  // Listen for global open event & ESC key
   useEffect(() => {
     const handleOpen = () => {
       setIsOpen(true)
       setIsFlipped(false)
+      setErrorMsg('')
     }
     window.addEventListener('open-booking-modal', handleOpen)
     return () => window.removeEventListener('open-booking-modal', handleOpen)
   }, [])
+
+  // Handle body scroll lock & Escape key
+  useEffect(() => {
+    if (!isOpen) return
+
+    document.body.style.overflow = 'hidden'
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') {
+        setIsOpen(false)
+      }
+    }
+    window.addEventListener('keydown', handleKeyDown)
+
+    return () => {
+      document.body.style.overflow = ''
+      window.removeEventListener('keydown', handleKeyDown)
+    }
+  }, [isOpen])
 
   // Generate days in month for the custom calendar
   useEffect(() => {
@@ -67,20 +88,22 @@ export default function BookingModal() {
     today.setHours(0,0,0,0)
     if (date < today) return // Disable past dates
     setSelectedDate(date)
+    setErrorMsg('')
   }
 
   const handleNextClick = () => {
     if (!selectedDate) {
-      alert('Please choose a date to proceed.')
+      setErrorMsg('Please choose a date to proceed.')
       return
     }
+    setErrorMsg('')
     setIsFlipped(true)
   }
 
   const handleDone = (e) => {
     e.preventDefault()
     if (!name || !mobile || !location) {
-      alert('Please fill out all details.')
+      setErrorMsg('Please fill out all required details.')
       return
     }
 
@@ -117,7 +140,8 @@ Please send me a quotation. - Sandy Makeover`
   const weekDays = ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa']
 
   return (
-    <div className="fixed inset-0 z-[9999] bg-[#1E0B10]/85 backdrop-blur-md flex items-center justify-center p-4">
+    <div className="fixed inset-0 z-[9999] bg-[#1E0B10]/85 backdrop-blur-md flex items-center justify-center p-4"
+      role="dialog" aria-modal="true" aria-label="Book your date modal">
       {/* 3D Card Container */}
       <div className="relative w-full max-w-[390px] h-[550px] perspective-1500">
         
@@ -130,18 +154,22 @@ Please send me a quotation. - Sandy Makeover`
           <div className="absolute inset-0 w-full h-full bg-[#1E0B10] border border-border-light p-7 flex flex-col justify-between backface-hidden shadow-2xl">
             <div>
               {/* Header */}
-              <div className="flex justify-between items-center mb-6">
+              <div className="flex justify-between items-center mb-4">
                 <span className="font-serif italic text-[22px] tracking-wide text-gold">Choose Your Date</span>
-                <button onClick={() => setIsOpen(false)} className="text-cream/50 hover:text-cream text-lg transition-colors">✕</button>
+                <button onClick={() => setIsOpen(false)} aria-label="Close modal" className="text-cream/50 hover:text-cream text-lg transition-colors p-1">✕</button>
               </div>
+
+              {errorMsg && !isFlipped && (
+                <p className="text-[11px] text-red-400 bg-red-950/40 border border-red-800/40 p-2 mb-3 text-center">{errorMsg}</p>
+              )}
 
               {/* Month Switcher */}
               <div className="flex justify-between items-center mb-5 bg-[#32131A]/30 py-2 px-3 border border-border/10">
-                <button onClick={handlePrevMonth} className="text-gold hover:text-gold-light text-[18px] px-2 transition-colors">‹</button>
+                <button onClick={handlePrevMonth} aria-label="Previous month" className="text-gold hover:text-gold-light text-[18px] px-2 transition-colors">‹</button>
                 <span className="font-sans text-[11px] font-semibold tracking-[0.2em] uppercase text-cream">
                   {months[currentDate.getMonth()]} {currentDate.getFullYear()}
                 </span>
-                <button onClick={handleNextMonth} className="text-gold hover:text-gold-light text-[18px] px-2 transition-colors">›</button>
+                <button onClick={handleNextMonth} aria-label="Next month" className="text-gold hover:text-gold-light text-[18px] px-2 transition-colors">›</button>
               </div>
 
               {/* Weekday Labels */}
@@ -198,12 +226,16 @@ Please send me a quotation. - Sandy Makeover`
             <form onSubmit={handleDone} className="h-full flex flex-col justify-between">
               <div>
                 {/* Header */}
-                <div className="flex justify-between items-center mb-6">
+                <div className="flex justify-between items-center mb-4">
                   <span className="font-serif italic text-[22px] tracking-wide text-gold">Booking Details</span>
-                  <button type="button" onClick={() => setIsFlipped(false)} className="font-sans text-[9px] tracking-widest text-gold hover:text-gold-light uppercase flex items-center gap-1 transition-colors">
+                  <button type="button" onClick={() => { setIsFlipped(false); setErrorMsg(''); }} className="font-sans text-[9px] tracking-widest text-gold hover:text-gold-light uppercase flex items-center gap-1 transition-colors">
                     ← Back
                   </button>
                 </div>
+
+                {errorMsg && isFlipped && (
+                  <p className="text-[11px] text-red-400 bg-red-950/40 border border-red-800/40 p-2 mb-3 text-center">{errorMsg}</p>
+                )}
 
                 {/* Form fields */}
                 <div className="flex flex-col gap-4">

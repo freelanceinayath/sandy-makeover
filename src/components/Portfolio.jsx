@@ -62,17 +62,19 @@ export default function Portfolio() {
       {/* Lightbox */}
       {lightbox !== null && (
         <div className="fixed inset-0 z-[9999] bg-[rgba(12,5,2,0.97)] flex items-center justify-center"
+          role="dialog" aria-modal="true" aria-label="Image gallery lightbox"
           onClick={() => setLightbox(null)}>
-          <button className="absolute top-5 right-6 text-cream/40 hover:text-cream text-2xl" onClick={() => setLightbox(null)}>✕</button>
-          <button className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 w-11 h-11 border border-border text-cream/50 hover:border-gold hover:text-gold flex items-center justify-center text-2xl transition-all"
+          <button className="absolute top-5 right-6 text-cream/60 hover:text-cream text-2xl p-2" aria-label="Close image lightbox" onClick={() => setLightbox(null)}>✕</button>
+          <button className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 w-11 h-11 border border-border text-cream/70 hover:border-gold hover:text-gold flex items-center justify-center text-2xl transition-all"
+            aria-label="Previous image"
             onClick={e => { e.stopPropagation(); prev() }}>‹</button>
           <img src={IMAGES[lightbox].src} alt={IMAGES[lightbox].alt}
             className="max-w-[88vw] max-h-[88vh] object-contain w-auto h-auto"
-            loading="lazy" decoding="async"
             style={{ display:'block' }} onClick={e => e.stopPropagation()} />
-          <button className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 w-11 h-11 border border-border text-cream/50 hover:border-gold hover:text-gold flex items-center justify-center text-2xl transition-all"
+          <button className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 w-11 h-11 border border-border text-cream/70 hover:border-gold hover:text-gold flex items-center justify-center text-2xl transition-all"
+            aria-label="Next image"
             onClick={e => { e.stopPropagation(); next() }}>›</button>
-          <span className="absolute bottom-6 left-1/2 -translate-x-1/2 font-sans text-[10px] tracking-[0.2em] text-cream/25">
+          <span className="absolute bottom-6 left-1/2 -translate-x-1/2 font-sans text-[10px] tracking-[0.2em] text-cream/70">
             {lightbox + 1} / {IMAGES.length}
           </span>
         </div>

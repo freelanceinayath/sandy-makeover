@@ -4,7 +4,6 @@ export default {
   safelist: [
     'delay-100','delay-150','delay-200','delay-300','delay-400','delay-500','delay-600','delay-700',
     'reveal','reveal-scale','reveal-left','in-view','glass','img-zoom','bg-gold-gradient',
-    'duration-400','translate-x-full','translate-x-0','pointer-events-none','pointer-events-auto',
   ],
   theme: {
     extend: {
