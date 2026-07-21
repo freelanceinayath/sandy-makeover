@@ -4,13 +4,19 @@ export default function FloatingActions() {
   const [heroGone, setHeroGone] = useState(false)
 
   useEffect(() => {
+    let rafId
     const onScroll = () => {
-      const hero = document.getElementById('home')
-      if (!hero) return
-      setHeroGone(hero.getBoundingClientRect().bottom < 0)
+      cancelAnimationFrame(rafId)
+      rafId = requestAnimationFrame(() => {
+        const isHeroGone = window.scrollY > (window.innerHeight - 100)
+        setHeroGone((prev) => (prev !== isHeroGone ? isHeroGone : prev))
+      })
     }
     window.addEventListener('scroll', onScroll, { passive: true })
-    return () => window.removeEventListener('scroll', onScroll)
+    return () => {
+      cancelAnimationFrame(rafId)
+      window.removeEventListener('scroll', onScroll)
+    }
   }, [])
 
   return (

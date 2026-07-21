@@ -24,17 +24,27 @@ export default function Hero() {
     return () => timers.forEach(clearTimeout)
   }, [])
 
-  // Parallax on scroll for the text content
+  // Parallax on scroll for the text content using requestAnimationFrame and translate3d
   useEffect(() => {
     const content = heroRef.current?.querySelector('.hero-text')
+    if (!content) return
+
+    let rafId
     const onScroll = () => {
-      if (!content) return
-      const s = window.scrollY
-      content.style.opacity = String(Math.max(0, 1 - s / 600))
-      content.style.transform = `translateY(${s * 0.12}px)`
+      cancelAnimationFrame(rafId)
+      rafId = requestAnimationFrame(() => {
+        const s = window.scrollY
+        if (s <= 600) {
+          content.style.opacity = String(Math.max(0, 1 - s / 600))
+          content.style.transform = `translate3d(0, ${s * 0.12}px, 0)`
+        }
+      })
     }
     window.addEventListener('scroll', onScroll, { passive: true })
-    return () => window.removeEventListener('scroll', onScroll)
+    return () => {
+      cancelAnimationFrame(rafId)
+      window.removeEventListener('scroll', onScroll)
+    }
   }, [])
 
   const cls = (show, extra = '') =>
