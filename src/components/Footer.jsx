@@ -1,3 +1,5 @@
+import { Phone, MessageCircle, Instagram } from 'lucide-react'
+
 const WA = 'https://wa.me/917092368305'
 const IG = 'https://instagram.com/sandymakeover'
 
@@ -39,9 +41,18 @@ export default function Footer() {
           {/* Contact */}
           <div>
             <h4 className="font-sans text-[10px] font-medium tracking-[0.22em] uppercase text-gold mb-6">Contact</h4>
-            <a href="tel:+917092368305" className="block font-sans text-[12px] font-light text-cream/30 mb-3 hover:text-gold transition-colors">📞 +91 70923 68305</a>
-            <a href={WA} target="_blank" rel="noopener noreferrer" className="block font-sans text-[12px] font-light text-cream/30 mb-3 hover:text-gold transition-colors">💬 WhatsApp Us</a>
-            <a href={IG} target="_blank" rel="noopener noreferrer" className="block font-sans text-[12px] font-light text-cream/30 mb-6 hover:text-gold transition-colors">📸 @sandymakeover</a>
+            <a href="tel:+917092368305" className="flex items-center gap-2 font-sans text-[12px] font-light text-cream/70 mb-3 hover:text-gold transition-colors">
+              <Phone className="w-3.5 h-3.5 text-gold" strokeWidth={1.5} />
+              <span>+91 70923 68305</span>
+            </a>
+            <a href={WA} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 font-sans text-[12px] font-light text-cream/70 mb-3 hover:text-gold transition-colors">
+              <MessageCircle className="w-3.5 h-3.5 text-gold" strokeWidth={1.5} />
+              <span>WhatsApp Us</span>
+            </a>
+            <a href={IG} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 font-sans text-[12px] font-light text-cream/70 mb-6 hover:text-gold transition-colors">
+              <Instagram className="w-3.5 h-3.5 text-gold" strokeWidth={1.5} />
+              <span>@sandymakeover</span>
+            </a>
             <div className="font-sans text-[11px] font-light text-cream/20 leading-[1.8]">
               <strong className="text-cream/30 block mb-1">Hours</strong>Mon – Sun: 7 AM – 8 PM
             </div>

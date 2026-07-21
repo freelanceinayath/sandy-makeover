@@ -1,3 +1,5 @@
+import { Phone } from 'lucide-react'
+
 const WA = 'https://wa.me/917092368305'
 
 export default function FinalCTA() {
@@ -32,9 +34,10 @@ export default function FinalCTA() {
             Reserve Your Date Today
           </button>
         </div>
-        <p className="font-sans text-[12px] text-cream/60 mt-6 reveal delay-400" data-reveal>
-          📞 Call or WhatsApp:{' '}
-          <a href="tel:+917092368305" className="text-gold hover:text-gold-light transition-colors border-b border-gold/20">
+        <p className="font-sans text-[12px] text-cream/60 mt-6 reveal delay-400 flex items-center justify-center gap-1.5" data-reveal>
+          <Phone className="w-3.5 h-3.5 text-gold" strokeWidth={2} />
+          <span>Call or WhatsApp:</span>
+          <a href="tel:+917092368305" className="text-gold hover:text-gold-light transition-colors border-b border-gold/20 ml-1">
             +91 70923 68305
           </a>
         </p>

@@ -1,3 +1,5 @@
+import { Star } from 'lucide-react'
+
 const REVIEWS = [
   { name:'Priya Sharma',  role:'Bride, Dec 2024',  avatar:'P', text:'"Sandy transformed me into the most beautiful version of myself. Every guest was asking about my makeup. Best decision I made for my wedding!"' },
   { name:'Ananya Reddy',  role:'Bride, Jan 2025',  avatar:'A', text:'"From consultation to final look — Sandy\'s professionalism is unmatched. My hair stayed perfect through the entire reception. Worth every rupee!"' },
@@ -11,7 +13,11 @@ const ALL = [...REVIEWS, ...REVIEWS]
 function ReviewCard({ r }) {
   return (
     <div className="flex-shrink-0 w-[300px] md:w-[340px] bg-dark-3 border border-border p-7 hover:border-border-light hover:-translate-y-1 hover:shadow-luxury-md transition-all duration-500">
-      <div className="text-[13px] mb-4">⭐⭐⭐⭐⭐</div>
+      <div className="flex gap-1 mb-4 text-gold">
+        {[...Array(5)].map((_, i) => (
+          <Star key={i} className="w-3.5 h-3.5 fill-gold text-gold" strokeWidth={0} />
+        ))}
+      </div>
       <p className="font-serif text-[15px] italic text-cream/90 leading-[1.65] mb-6">{r.text}</p>
       <div className="flex items-center gap-4">
         <div className="w-9 h-9 rounded-full bg-gold-gradient flex items-center justify-center font-script text-[18px] text-dark flex-shrink-0">{r.avatar}</div>

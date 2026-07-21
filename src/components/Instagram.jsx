@@ -1,3 +1,5 @@
+import { Eye } from 'lucide-react'
+
 const INSTA = [
   { src:'/portfolio_1.png', alt:'Bridal look', type: 'image' },
   { src:'/portfolio_2.png', alt:'Eye makeup', type: 'image' },
@@ -37,8 +39,9 @@ export default function Instagram() {
               <img src={post.src} alt={post.alt} loading="lazy"
                 className="w-full h-full object-cover transition-transform duration-600 group-hover:scale-[1.08]" />
             )}
-            <div className="absolute inset-0 bg-gold/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-400">
-              <span className="font-sans text-[10px] font-medium tracking-[0.14em] text-dark">❤️ View</span>
+            <div className="absolute inset-0 bg-gold/75 flex flex-col items-center justify-center gap-1.5 opacity-0 group-hover:opacity-100 transition-opacity duration-400">
+              <Eye className="w-5 h-5 text-dark" strokeWidth={2} />
+              <span className="font-sans text-[10px] font-semibold tracking-[0.16em] uppercase text-dark">View Post</span>
             </div>
           </a>
         ))}

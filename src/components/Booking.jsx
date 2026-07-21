@@ -1,12 +1,14 @@
+import { MessageSquare, Calendar, Heart, CreditCard, Sparkles, Check } from 'lucide-react'
+
 const WA = 'https://wa.me/917092368305'
 
 const STEPS = [
-  { num:'01', icon:'💬', title:'Choose Service',  desc:'Pick from bridal, groom, hair styling, reception, or engagement packages.' },
-  { num:'02', icon:'📅', title:'Choose Date',     desc:'Share your wedding date and preferred time slot for availability.' },
-  { num:'03', icon:'🌸', title:'Consultation',    desc:'A personal style consultation to curate your dream look together.' },
-  { num:'04', icon:'💳', title:'Advance Payment', desc:'Secure your date with a small advance — simple and hassle-free.' },
-  { num:'05', icon:'💍', title:'Wedding Day',     desc:'We arrive on time, fully prepared to make you look extraordinary.' },
-  { num:'✦',  icon:'✨', title:"You're Ready",    desc:'Step into your wedding day feeling radiant, confident, and breathtakingly beautiful.', final:true },
+  { num:'01', icon: MessageSquare, title:'Choose Service',  desc:'Pick from bridal, groom, hair styling, reception, or engagement packages.' },
+  { num:'02', icon: Calendar, title:'Choose Date',     desc:'Share your wedding date and preferred time slot for availability.' },
+  { num:'03', icon: Heart, title:'Consultation',    desc:'A personal style consultation to curate your dream look together.' },
+  { num:'04', icon: CreditCard, title:'Advance Payment', desc:'Secure your date with a small advance — simple and hassle-free.' },
+  { num:'05', icon: Sparkles, title:'Wedding Day',     desc:'We arrive on time, fully prepared to make you look extraordinary.' },
+  { num:'✦',  icon: Check, title:"You're Ready",    desc:'Step into your wedding day feeling radiant, confident, and breathtakingly beautiful.', final:true },
 ]
 
 const FAQ = [
@@ -31,24 +33,27 @@ export default function Booking() {
 
         {/* Timeline */}
         <div className="max-w-[620px] mx-auto mb-16">
-          {STEPS.map((step, i) => (
-            <div key={step.num}>
-              <div className={`flex gap-6 items-start reveal-left ${i%2!==0?'delay-100':''}`} data-reveal>
-                <div className={`flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center text-[20px] border-2 ${
-                  step.final ? 'border-gold bg-gold-gradient' : 'border-border bg-dark-3'}`}>
-                  {step.icon}
+          {STEPS.map((step, i) => {
+            const StepIcon = step.icon
+            return (
+              <div key={step.num}>
+                <div className={`flex gap-6 items-start reveal-left ${i%2!==0?'delay-100':''}`} data-reveal>
+                  <div className={`flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center border-2 ${
+                    step.final ? 'border-gold bg-gold-gradient text-dark' : 'border-border bg-dark-3 text-gold'}`}>
+                    <StepIcon className="w-5 h-5" strokeWidth={1.5} />
+                  </div>
+                  <div className="pb-10 flex-1">
+                    <span className="font-sans text-[10px] font-medium tracking-[0.22em] uppercase text-gold block mb-1">{step.num}</span>
+                    <h3 className={`font-serif text-[22px] font-medium mb-2 ${step.final ? 'text-gold' : 'text-cream'}`}>{step.title}</h3>
+                    <p className="font-sans text-[13px] font-light text-cream/75 leading-[1.75]">{step.desc}</p>
+                  </div>
                 </div>
-                <div className="pb-10 flex-1">
-                  <span className="font-sans text-[10px] font-medium tracking-[0.22em] uppercase text-gold block mb-1">{step.num}</span>
-                  <h3 className={`font-serif text-[22px] font-medium mb-2 ${step.final ? 'text-gold' : 'text-cream'}`}>{step.title}</h3>
-                  <p className="font-sans text-[13px] font-light text-cream/75 leading-[1.75]">{step.desc}</p>
-                </div>
+                {i < STEPS.length - 1 && (
+                  <div className="ml-6 w-px h-8 bg-gradient-to-b from-gold/30 to-transparent" />
+                )}
               </div>
-              {i < STEPS.length - 1 && (
-                <div className="ml-6 w-px h-8 bg-gradient-to-b from-gold/30 to-transparent" />
-              )}
-            </div>
-          ))}
+            )
+          })}
         </div>
 
         <div className="text-center mb-24 reveal" data-reveal>
