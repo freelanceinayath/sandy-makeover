@@ -30,41 +30,80 @@ export default function Home() {
 
   const salonSchema = {
     "@context": "https://schema.org",
-    "@type": "BeautySalon",
-    "name": "Sandy Makeover",
-    "description": "Premium luxury bridal makeup, groom styling, and hair artistry. Custom timeless beauty designs for weddings, engagements, and receptions.",
-    "url": "https://sandymakeover.vercel.app",
-    "telephone": "+91 70923 68305",
-    "priceRange": "₹₹₹",
-    "image": "https://sandymakeover.vercel.app/owner.jpg",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Chennai",
-      "addressRegion": "Tamil Nadu",
-      "addressCountry": "IN"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": 13.0827,
-      "longitude": 80.2707
-    },
-    "openingHoursSpecification": {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": [
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday",
-        "Saturday",
-        "Sunday"
-      ],
-      "opens": "07:00",
-      "closes": "20:00"
-    },
-    "sameAs": [
-      "https://instagram.com/sandymakeover",
-      "https://wa.me/917092368305"
+    "@graph": [
+      {
+        "@type": "BeautySalon",
+        "@id": "https://sandymakeover.vercel.app/#salon",
+        "name": "Sandy Makeover",
+        "alternateName": ["Sandy Makeover Chennai", "Sandy Makeover Bridal Studio", "Sandy Makeover Hair Artistry"],
+        "description": "Sandy Makeover is Chennai's premier luxury bridal makeup artist studio, groom styling specialist, and hair artistry expert. Delivering HD waterproof 16-hour wear bridal makeup for weddings, engagements, and receptions.",
+        "url": "https://sandymakeover.vercel.app",
+        "telephone": "+91 70923 68305",
+        "email": "sandymakeover@gmail.com",
+        "priceRange": "₹₹₹",
+        "logo": "https://sandymakeover.vercel.app/owner.jpg",
+        "image": "https://sandymakeover.vercel.app/hero_bride_real.png",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Chennai Citywide & Destination Travel",
+          "addressLocality": "Chennai",
+          "addressRegion": "Tamil Nadu",
+          "postalCode": "600001",
+          "addressCountry": "IN"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 13.0827,
+          "longitude": 80.2707
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.9",
+          "reviewCount": "520",
+          "bestRating": "5",
+          "worstRating": "1"
+        },
+        "openingHoursSpecification": {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+          "opens": "07:00",
+          "closes": "20:00"
+        },
+        "sameAs": [
+          "https://instagram.com/sandymakeover",
+          "https://wa.me/917092368305"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://sandymakeover.vercel.app/#website",
+        "url": "https://sandymakeover.vercel.app",
+        "name": "Sandy Makeover",
+        "publisher": {
+          "@id": "https://sandymakeover.vercel.app/#salon"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What services does Sandy Makeover offer?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Sandy Makeover offers luxury bridal makeup, groom grooming, reception styling, engagement makeup, and South Indian wedding hair artistry with home service available across Chennai."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How to book Sandy Makeover for a wedding date?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "You can book Sandy Makeover directly via WhatsApp or phone at +91 70923 68305 or use the online booking modal on https://sandymakeover.vercel.app."
+            }
+          }
+        ]
+      }
     ]
   }
 

@@ -38,7 +38,18 @@ export default function SEO({
       <meta name="twitter:description" content={pageDesc} />
       <meta name="twitter:image" content={shareImg} />
       
-      {/* Structured Data (Schema.org JSON-LD) */}
+      {/* Search Engine Directives & Meta Keywords for Rank #1 & AI Overviews */}
+      <meta name="keywords" content="Sandy Makeover, Sandy Makeover Chennai, Sandy Makeover bridal makeup, Sandy Makeover hair artist, Sandy Makeover price, Sandy Makeover contact number, bridal makeup artist Chennai, groom styling Chennai, reception makeup, engagement makeup" />
+      <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+      <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+      <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+      <meta name="author" content="Sandy Makeover" />
+      <meta name="geo.region" content="IN-TN" />
+      <meta name="geo.placename" content="Chennai" />
+      <meta name="geo.position" content="13.0827;80.2707" />
+      <meta name="ICBM" content="13.0827, 80.2707" />
+
+      {/* Structured Data (Schema.org JSON-LD Graph) */}
       {schema && (
         <script type="application/ld+json">
           {JSON.stringify(schema)}
