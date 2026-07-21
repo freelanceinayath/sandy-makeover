@@ -36,7 +36,10 @@
   .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 
   /* ── Font utilities ── */
-  .font-script { font-family: 'Great Vibes', cursive; }
+  .font-script {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-style: italic;
+  }
   .font-serif  { font-family: 'Cormorant Garamond', Georgia, serif; }
   .font-sans   { font-family: 'Poppins', system-ui, sans-serif; }
 
