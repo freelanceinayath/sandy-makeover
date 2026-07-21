@@ -10,6 +10,7 @@ const POLAROIDS = [
 
 export default function Hero() {
   const [step, setStep] = useState(0)
+  const [mousePos, setMousePos] = useState({ x: 0, y: 0 })
   const heroRef = useRef(null)
 
   useEffect(() => {
@@ -37,11 +38,26 @@ export default function Hero() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
+  const handleMouseMove = (e) => {
+    if (!heroRef.current) return
+    const rect = heroRef.current.getBoundingClientRect()
+    // Calculate mouse position relative to hero screen dimensions
+    const x = ((e.clientX - rect.left) / rect.width) * 2 - 1 // -1 to 1
+    const y = ((e.clientY - rect.top) / rect.height) * 2 - 1 // -1 to 1
+    setMousePos({ x, y })
+  }
+
+  const handleMouseLeave = () => {
+    setMousePos({ x: 0, y: 0 })
+  }
+
   const cls = (show, extra = '') =>
     `transition-all duration-700 ease-out ${extra} ${show ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`
 
   return (
     <section id="home" ref={heroRef}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
       className="relative min-h-screen bg-dark flex flex-col items-center justify-center overflow-hidden pt-28 pb-20 px-6">
       
       {/* Cinematic dark vignette background */}
@@ -55,19 +71,35 @@ export default function Hero() {
         {POLAROIDS.map((p, i) => (
           <div
             key={p.caption}
-            className="polaroid absolute"
+            className="absolute"
             style={{
               width: i === 1 ? '32%' : '30%',
               left: i === 0 ? '4%' : i === 1 ? '34%' : '66%',
               top: i === 0 ? '12%' : i === 1 ? '32%' : '6%',
-              rotate: p.rotate,
               zIndex: p.isCenter ? 10 : 1,
-              animation: `float ${6 + i * 1.5}s ease-in-out infinite`,
-              animationDelay: `${i * 0.6}s`,
+              transform: `translate3d(${mousePos.x * (20 - i * 6)}px, ${mousePos.y * (20 - i * 6)}px, 0)`,
+              transition: 'transform 0.35s cubic-bezier(0.215, 0.61, 0.355, 1)',
             }}
           >
-            <img src={p.src} alt={p.caption} className="w-full aspect-square object-cover" />
-            <div className="polaroid-caption">{p.caption}</div>
+            <div
+              className="polaroid relative w-full h-full"
+              style={{
+                rotate: p.rotate,
+                animation: `float ${6 + i * 1.5}s ease-in-out infinite`,
+                animationDelay: `${i * 0.6}s`,
+              }}
+            >
+              {/* Gold Metallic Scrapbook Tape Pin */}
+              <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 w-8 h-4 opacity-90 border border-gold/30 shadow-[0_2px_4px_rgba(0,0,0,0.25)] origin-center -rotate-3 mix-blend-color-dodge z-30" 
+                style={{
+                  background: 'linear-gradient(135deg, #E5C47F 0%, #C3A359 50%, #8A6E2F 100%)',
+                  clipPath: 'polygon(5% 0%, 95% 0%, 100% 100%, 0% 100%)',
+                }}
+              />
+              
+              <img src={p.src} alt={p.caption} className="w-full aspect-square object-cover" />
+              <div className="polaroid-caption">{p.caption}</div>
+            </div>
           </div>
         ))}
       </div>
