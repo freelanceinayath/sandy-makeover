@@ -49,7 +49,7 @@ export default function Navbar() {
           <div className="hidden md:flex items-center gap-10">
             {NAV_LINKS.map(({ label, href }) => (
               <a key={href} href={href} onClick={e => scrollTo(e, href)}
-                className="font-sans text-[10px] font-medium tracking-[0.2em] uppercase text-cream/60 hover:text-gold transition-colors duration-300">
+                className="font-sans text-[10px] font-semibold tracking-[0.2em] uppercase text-cream/90 hover:text-gold transition-colors duration-300">
                 {label}
               </a>
             ))}
@@ -57,7 +57,7 @@ export default function Navbar() {
 
           {/* Desktop CTA */}
           <button onClick={() => window.dispatchEvent(new CustomEvent('open-booking-modal'))}
-            className="hidden md:inline-flex items-center gap-2 font-sans text-[10px] font-medium tracking-[0.2em] uppercase px-6 py-2.5 border border-border-light text-cream hover:bg-gold hover:border-gold hover:text-dark transition-all duration-300">
+            className="hidden md:inline-flex items-center gap-2 font-sans text-[10px] font-semibold tracking-[0.2em] uppercase px-6 py-2.5 border border-border text-cream hover:bg-gold hover:border-gold hover:text-dark transition-all duration-300">
             Reserve your date
           </button>
 
@@ -77,7 +77,7 @@ export default function Navbar() {
           <div className="font-serif italic text-[32px] font-medium text-gold mb-2">Sandy Makeover</div>
           {NAV_LINKS.map(({ label, href }) => (
             <a key={href} href={href} onClick={e => scrollTo(e, href)}
-              className="font-sans text-[12px] font-medium tracking-[0.24em] uppercase text-cream/50 hover:text-gold transition-colors">
+              className="font-sans text-[12px] font-semibold tracking-[0.24em] uppercase text-cream/85 hover:text-gold transition-colors">
               {label}
             </a>
           ))}

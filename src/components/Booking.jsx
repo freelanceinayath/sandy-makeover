@@ -40,8 +40,8 @@ export default function Booking() {
                 </div>
                 <div className="pb-10 flex-1">
                   <span className="font-sans text-[10px] font-medium tracking-[0.22em] uppercase text-gold block mb-1">{step.num}</span>
-                  <h3 className={`font-serif text-[22px] font-light mb-2 ${step.final ? 'text-gold' : 'text-cream'}`}>{step.title}</h3>
-                  <p className="font-sans text-[13px] font-light text-cream/40 leading-[1.75]">{step.desc}</p>
+                  <h3 className={`font-serif text-[22px] font-medium mb-2 ${step.final ? 'text-gold' : 'text-cream'}`}>{step.title}</h3>
+                  <p className="font-sans text-[13px] font-light text-cream/75 leading-[1.75]">{step.desc}</p>
                 </div>
               </div>
               {i < STEPS.length - 1 && (
@@ -66,11 +66,11 @@ export default function Booking() {
           <div className="divide-y divide-border">
             {FAQ.map((faq, i) => (
               <details key={i} className="group py-6 reveal" data-reveal>
-                <summary className="flex justify-between items-center cursor-pointer font-sans text-[14px] font-light text-cream/70 hover:text-gold transition-colors duration-300">
+                <summary className="flex justify-between items-center cursor-pointer font-sans text-[14px] font-medium text-cream/90 hover:text-gold transition-colors duration-300">
                   {faq.q}
                   <span className="flex-shrink-0 ml-4 text-gold text-lg group-open:rotate-45 transition-transform duration-300">+</span>
                 </summary>
-                <p className="font-sans text-[13px] font-light text-cream/40 leading-[1.8] mt-4 pr-8">{faq.a}</p>
+                <p className="font-sans text-[13px] font-light text-cream/75 leading-[1.8] mt-4 pr-8">{faq.a}</p>
               </details>
             ))}
           </div>

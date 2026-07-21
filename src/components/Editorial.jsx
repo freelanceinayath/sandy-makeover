@@ -12,7 +12,7 @@ export default function Editorial() {
               <span className="font-serif font-light text-[38px] md:text-[46px] text-gold leading-none tracking-tight">
                 3+
               </span>
-              <span className="font-sans text-[10px] font-medium tracking-[0.16em] uppercase text-cream/60 mt-3.5 max-w-[130px] leading-relaxed">
+              <span className="font-sans text-[11px] font-semibold tracking-[0.16em] uppercase text-cream/85 mt-3.5 max-w-[130px] leading-relaxed">
                 Years Experience
               </span>
             </div>
@@ -22,7 +22,7 @@ export default function Editorial() {
               <span className="font-serif italic font-light text-[24px] md:text-[30px] text-gold leading-none h-[38px] md:h-[46px] flex items-center justify-center">
                 Certified
               </span>
-              <span className="font-sans text-[10px] font-medium tracking-[0.16em] uppercase text-cream/60 mt-3.5 max-w-[130px] leading-relaxed">
+              <span className="font-sans text-[11px] font-semibold tracking-[0.16em] uppercase text-cream/85 mt-3.5 max-w-[130px] leading-relaxed">
                 Groom Makeup Artist
               </span>
             </div>
@@ -32,7 +32,7 @@ export default function Editorial() {
               <span className="font-serif font-light text-[38px] md:text-[46px] text-gold leading-none tracking-tight">
                 500+
               </span>
-              <span className="font-sans text-[10px] font-medium tracking-[0.16em] uppercase text-cream/60 mt-3.5 max-w-[130px] leading-relaxed">
+              <span className="font-sans text-[11px] font-semibold tracking-[0.16em] uppercase text-cream/85 mt-3.5 max-w-[130px] leading-relaxed">
                 Client Transformations
               </span>
             </div>
@@ -42,7 +42,7 @@ export default function Editorial() {
               <span className="font-serif font-light text-[38px] md:text-[46px] text-gold leading-none tracking-tight">
                 100%
               </span>
-              <span className="font-sans text-[10px] font-medium tracking-[0.16em] uppercase text-cream/60 mt-3.5 max-w-[130px] leading-relaxed">
+              <span className="font-sans text-[11px] font-semibold tracking-[0.16em] uppercase text-cream/85 mt-3.5 max-w-[130px] leading-relaxed">
                 Client Satisfied
               </span>
             </div>

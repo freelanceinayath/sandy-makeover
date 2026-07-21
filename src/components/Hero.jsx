@@ -84,13 +84,13 @@ export default function Hero() {
           <span className={`block font-serif font-light text-cream italic transition-all duration-700 ${
             step >= 3 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
           }`}
-          style={{ fontSize: 'clamp(42px, 9.5vw, 76px)', letterSpacing: '-0.02em' }}>
+          style={{ fontSize: 'clamp(42px, 9.5vw, 76px)', letterSpacing: '-0.02em', textShadow: '0 4px 18px rgba(10,4,2,0.65)' }}>
             Radiance,
           </span>
           <span className={`block font-script text-gold mt-1 transition-all duration-700 delay-150 ${
             step >= 4 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
           }`}
-          style={{ fontSize: 'clamp(38px, 8.5vw, 68px)' }}>
+          style={{ fontSize: 'clamp(38px, 8.5vw, 68px)', textShadow: '0 4px 18px rgba(10,4,2,0.5)' }}>
             unforgettable.
           </span>
         </h1>
@@ -128,7 +128,7 @@ export default function Hero() {
         </div>
 
         {/* Subtitle (Now placed below the buttons) */}
-        <p className={cls(step >= 6, 'font-sans text-[13px] font-light text-cream/60 leading-[1.8] max-w-[360px] mx-auto')}>
+        <p className={cls(step >= 6, 'font-sans text-[14px] font-light text-cream/85 leading-[1.8] max-w-[360px] mx-auto')}>
           Luxury bridal makeup designed around your personality, traditions, and wedding story.
         </p>
       </div>

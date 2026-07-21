@@ -28,7 +28,7 @@ export default function Why() {
               data-reveal>
               <div className="text-[32px] mb-5">{f.icon}</div>
               <h3 className="font-serif text-[20px] font-medium text-gold mb-3">{f.title}</h3>
-              <p className="font-sans text-[13px] font-light text-cream/60 leading-relaxed">{f.desc}</p>
+              <p className="font-sans text-[13px] font-light text-cream/80 leading-relaxed">{f.desc}</p>
             </div>
           ))}
         </div>

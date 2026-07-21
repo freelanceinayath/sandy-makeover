@@ -43,11 +43,11 @@ function ServiceCard({ service, delay }) {
         </div>
       </div>
       <div className="p-7">
-        <h3 className="font-serif text-[22px] font-light text-cream mb-3">{service.name}</h3>
-        <p className="font-sans text-[13px] font-light text-cream/45 leading-[1.75] mb-6">{service.desc}</p>
+        <h3 className="font-serif text-[22px] font-medium text-cream mb-3">{service.name}</h3>
+        <p className="font-sans text-[13px] font-light text-cream/75 leading-[1.75] mb-6">{service.desc}</p>
         <div className="pt-5 border-t border-border">
           <button onClick={() => window.dispatchEvent(new CustomEvent('open-booking-modal'))} id={`${service.id}-book-btn`}
-            className="block w-full text-center font-sans text-[10px] font-medium tracking-[0.18em] uppercase text-gold border border-border-light py-2.5 hover:bg-gold hover:text-dark transition-all duration-300">
+            className="block w-full text-center font-sans text-[10px] font-semibold tracking-[0.18em] uppercase text-gold border border-gold/45 py-2.5 hover:bg-gold hover:text-dark transition-all duration-300">
             Book Now
           </button>
         </div>

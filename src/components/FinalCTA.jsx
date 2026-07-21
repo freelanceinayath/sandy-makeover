@@ -24,7 +24,7 @@ export default function FinalCTA() {
           style={{ fontSize:'clamp(40px,6.5vw,84px)' }} data-reveal>
           Dream Wedding Look.
         </h2>
-        <p className="font-sans text-[13px] font-light text-cream/45 mb-10 max-w-[360px] mx-auto leading-[1.8] reveal delay-200" data-reveal>
+        <p className="font-sans text-[13px] font-light text-cream/80 mb-10 max-w-[360px] mx-auto leading-[1.8] reveal delay-200" data-reveal>
           Every detail, every brushstroke, every strand — crafted for you alone.
         </p>
         <div className="reveal delay-300 flex flex-col sm:flex-row gap-4 justify-center items-center" data-reveal>
@@ -32,7 +32,7 @@ export default function FinalCTA() {
             Reserve Your Date Today
           </button>
         </div>
-        <p className="font-sans text-[12px] text-cream/30 mt-6 reveal delay-400" data-reveal>
+        <p className="font-sans text-[12px] text-cream/60 mt-6 reveal delay-400" data-reveal>
           📞 Call or WhatsApp:{' '}
           <a href="tel:+917092368305" className="text-gold hover:text-gold-light transition-colors border-b border-gold/20">
             +91 70923 68305

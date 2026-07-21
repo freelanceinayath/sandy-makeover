@@ -29,8 +29,8 @@ export default function Transformation() {
                     </div>
                   </div>
                   <div className={`${i%2===0?'md:order-2':'md:order-1 md:text-right'}`}>
-                    <h3 className={`font-serif text-[24px] font-light mb-3 ${step.final?'text-gold':'text-cream'}`}>{step.title}</h3>
-                    <p className="font-sans text-[13px] font-light text-cream/40 leading-[1.7]">{step.desc}</p>
+                    <h3 className={`font-serif text-[24px] font-medium mb-3 ${step.final?'text-gold':'text-cream'}`}>{step.title}</h3>
+                    <p className="font-sans text-[13px] font-light text-cream/75 leading-[1.7]">{step.desc}</p>
                   </div>
                 </div>
                 {i < STEPS.length - 1 && (

@@ -12,12 +12,12 @@ function ReviewCard({ r }) {
   return (
     <div className="flex-shrink-0 w-[300px] md:w-[340px] bg-dark-3 border border-border p-7 hover:border-border-light hover:-translate-y-1 hover:shadow-luxury-md transition-all duration-500">
       <div className="text-[13px] mb-4">⭐⭐⭐⭐⭐</div>
-      <p className="font-serif text-[15px] italic text-cream/75 leading-[1.65] mb-6">{r.text}</p>
+      <p className="font-serif text-[15px] italic text-cream/90 leading-[1.65] mb-6">{r.text}</p>
       <div className="flex items-center gap-4">
         <div className="w-9 h-9 rounded-full bg-gold-gradient flex items-center justify-center font-script text-[18px] text-dark flex-shrink-0">{r.avatar}</div>
         <div>
-          <strong className="font-sans text-[12px] font-medium text-cream block">{r.name}</strong>
-          <small className="font-sans text-[10px] text-cream/35">{r.role}</small>
+          <strong className="font-sans text-[12px] font-semibold text-cream block">{r.name}</strong>
+          <small className="font-sans text-[10px] text-cream/60">{r.role}</small>
         </div>
       </div>
     </div>
