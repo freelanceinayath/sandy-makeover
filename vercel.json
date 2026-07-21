@@ -22,7 +22,7 @@
       ]
     },
     {
-      "source": "/google08fcd961384036b9.html",
+      "source": "/google:id.html",
       "headers": [
         { "key": "Content-Type", "value": "text/html; charset=utf-8" }
       ]
@@ -33,11 +33,11 @@
         { "key": "X-Frame-Options", "value": "DENY" },
         { "key": "X-Content-Type-Options", "value": "nosniff" },
         { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
-        { "key": "Content-Security-Policy", "value": "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://*.google-analytics.com https://*.clarity.ms; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https:; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://*.google-analytics.com https://*.clarity.ms https://*.supabase.co;" }
+        { "key": "Content-Security-Policy", "value": "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://*.google-analytics.com https://*.clarity.ms; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https:; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://*.google-analytics.com https://*.clarity.ms;" }
       ]
     }
   ],
   "rewrites": [
-    { "source": "/((?!sitemap\\.xml|robots\\.txt|manifest\\.json|google08fcd961384036b9\\.html|assets/).*)", "destination": "/index.html" }
+    { "source": "/((?!sitemap\\.xml|robots\\.txt|manifest\\.json|google.*\\.html|assets/).*)", "destination": "/index.html" }
   ]
 }
