@@ -8,7 +8,7 @@ export default function SEO({
   image = '/hero_bride_real.png',
   schema 
 }) {
-  const siteUrl = 'https://sandy-makeover.vercel.app';
+  const siteUrl = 'https://sandymakeover.vercel.app';
   
   // Clean final metadata values
   const pageTitle = title && title !== 'Sandy Makeover' ? `${title} | Sandy Makeover` : 'Sandy Makeover — Luxury Bridal Makeup & Hair Artistry';

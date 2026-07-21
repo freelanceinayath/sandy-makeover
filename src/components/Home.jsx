@@ -33,10 +33,10 @@ export default function Home() {
     "@type": "BeautySalon",
     "name": "Sandy Makeover",
     "description": "Premium luxury bridal makeup, groom styling, and hair artistry. Custom timeless beauty designs for weddings, engagements, and receptions.",
-    "url": "https://sandy-makeover.vercel.app",
+    "url": "https://sandymakeover.vercel.app",
     "telephone": "+91 70923 68305",
     "priceRange": "₹₹₹",
-    "image": "https://sandy-makeover.vercel.app/owner.jpg",
+    "image": "https://sandymakeover.vercel.app/owner.jpg",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Chennai",
