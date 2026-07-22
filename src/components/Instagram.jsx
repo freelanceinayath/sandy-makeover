@@ -1,6 +1,114 @@
-import { useState, useEffect } from 'react'
-import { Play, Eye, Video, Plus, X } from 'lucide-react'
+import { useState, useEffect, useRef } from 'react'
+import { Play, Eye, Video, Plus, X, ExternalLink } from 'lucide-react'
 import { getStoredMedia } from './AdminMediaModal'
+
+function NativeVideoPlayer({ src, title }) {
+  const videoRef = useRef(null)
+  const [isPlaying, setIsPlaying] = useState(false)
+  const [hasError, setHasError] = useState(false)
+
+  useEffect(() => {
+    if (videoRef.current) {
+      // Start muted autoplay to comply with Chrome & Safari autoplay policies
+      videoRef.current.muted = true
+      videoRef.current.play()
+        .then(() => setIsPlaying(true))
+        .catch(() => setIsPlaying(false))
+    }
+  }, [src])
+
+  const togglePlay = () => {
+    if (!videoRef.current) return
+    if (videoRef.current.paused) {
+      videoRef.current.muted = false // Unmute on user click
+      videoRef.current.play()
+        .then(() => setIsPlaying(true))
+        .catch(() => {})
+    } else {
+      videoRef.current.pause()
+      setIsPlaying(false)
+    }
+  }
+
+  if (hasError) {
+    return (
+      <div className="w-full h-full min-h-[320px] flex flex-col items-center justify-center p-6 text-center bg-dark-3 border border-border">
+        <Video className="w-10 h-10 text-gold mb-3 opacity-60" />
+        <p className="font-sans text-[13px] text-cream mb-2 font-medium">Bridal Video Reel</p>
+        <p className="font-sans text-[11px] text-cream/70 mb-4 max-w-[260px]">
+          Click below to watch this bridal transformation reel directly.
+        </p>
+        <a href={src} target="_blank" rel="noopener noreferrer" className="btn-gold-solid text-[9px] tracking-[0.2em] py-2.5 px-6 inline-flex items-center gap-2">
+          Watch Video Reel <ExternalLink className="w-3.5 h-3.5" />
+        </a>
+      </div>
+    )
+  }
+
+  return (
+    <div className="relative w-full h-full bg-black flex items-center justify-center group cursor-pointer" onClick={togglePlay}>
+      <video
+        ref={videoRef}
+        src={src}
+        controls
+        playsInline
+        onError={() => setHasError(true)}
+        onPlay={() => setIsPlaying(true)}
+        onPause={() => setIsPlaying(false)}
+        className="w-full h-full object-contain max-h-[65vh]"
+      />
+      {!isPlaying && (
+        <div className="absolute inset-0 bg-black/50 flex flex-col items-center justify-center gap-2 pointer-events-none transition-all">
+          <div className="w-16 h-16 rounded-full bg-gold-gradient text-dark flex items-center justify-center shadow-luxury-lg transform scale-110">
+            <Play className="w-7 h-7 fill-dark ml-1" />
+          </div>
+          <span className="font-sans text-[10px] font-bold tracking-[0.2em] uppercase text-gold">Click to Unmute & Play</span>
+        </div>
+      )}
+    </div>
+  )
+}
+
+function RenderVideoContent({ src, title }) {
+  if (!src) return null
+  const isInstagram = src.includes('instagram.com')
+  const isYoutube = src.includes('youtube.com') || src.includes('youtu.be')
+
+  if (isInstagram) {
+    const cleanUrl = src.split('?')[0].replace(/\/$/, '')
+    return (
+      <div className="w-full h-full min-h-[420px] bg-black flex items-center justify-center">
+        <iframe
+          src={`${cleanUrl}/embed`}
+          title={title || 'Instagram Reel'}
+          className="w-full h-[460px] border-0"
+          allowFullScreen
+        />
+      </div>
+    )
+  }
+
+  if (isYoutube) {
+    let videoId = ''
+    if (src.includes('shorts/')) videoId = src.split('shorts/')[1]?.split('?')[0]
+    else if (src.includes('v=')) videoId = src.split('v=')[1]?.split('&')[0]
+    else if (src.includes('youtu.be/')) videoId = src.split('youtu.be/')[1]?.split('?')[0]
+
+    return (
+      <div className="w-full h-full min-h-[360px] bg-black flex items-center justify-center">
+        <iframe
+          src={`https://www.youtube.com/embed/${videoId}?autoplay=1`}
+          title={title || 'YouTube Short'}
+          className="w-full h-[360px] border-0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        />
+      </div>
+    )
+  }
+
+  return <NativeVideoPlayer src={src} title={title} />
+}
 
 export default function Instagram() {
   const [items, setItems] = useState(getStoredMedia)
@@ -124,7 +232,7 @@ export default function Instagram() {
           onClick={() => setActiveVideo(null)}
         >
           <div
-            className="relative w-full max-w-[420px] bg-dark border border-gold/40 shadow-2xl overflow-hidden"
+            className="relative w-full max-w-[440px] bg-dark border border-gold/40 shadow-2xl overflow-hidden"
             onClick={e => e.stopPropagation()}
           >
             <div className="flex items-center justify-between p-4 border-b border-border/20 bg-dark-2">
@@ -140,14 +248,8 @@ export default function Instagram() {
               </button>
             </div>
 
-            <div className="relative aspect-[9/16] max-h-[70vh] w-full bg-black">
-              <video
-                src={activeVideo.src}
-                controls
-                autoPlay
-                playsInline
-                className="w-full h-full object-contain"
-              />
+            <div className="relative w-full bg-black min-h-[320px]">
+              <RenderVideoContent src={activeVideo.src} title={activeVideo.title} />
             </div>
 
             <div className="p-4 bg-dark-3 text-center border-t border-border/20">
