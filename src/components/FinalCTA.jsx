@@ -42,6 +42,17 @@ export default function FinalCTA() {
             +91 70923 68305
           </a>
         </p>
+        <p className="font-sans text-[11px] font-light text-cream/70 mt-5 reveal delay-500" data-reveal>
+          Developed by{' '}
+          <a
+            href="https://inayathbasha.vercel.app"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gold font-medium hover:text-gold-light hover:underline transition-colors duration-300 border-b border-gold/30 pb-0.5"
+          >
+            inayathbasha.vercel.app
+          </a>
+        </p>
       </div>
     </section>
   )
