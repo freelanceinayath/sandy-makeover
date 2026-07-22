@@ -135,8 +135,7 @@ export default function Hero() {
           <button onClick={() => window.dispatchEvent(new CustomEvent('open-booking-modal'))} id="hero-book-btn"
             className="btn-gold-cta text-[11px] tracking-[0.22em] font-bold py-4 px-9 shadow-luxury-lg"
             aria-label="Book your bridal makeup date">
-            <Sparkles className="w-4 h-4 text-dark fill-dark/30 flex-shrink-0" />
-            <span>Book Your Date</span>
+            Book Your Date
           </button>
         </div>
 

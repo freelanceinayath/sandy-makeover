@@ -61,15 +61,15 @@ export default function Navbar() {
         <div className="max-w-[1200px] mx-auto px-5 flex items-center justify-between">
           {/* Logo */}
           <a href="#home" onClick={e => scrollTo(e,'#home')}
-            className="font-serif italic text-[22px] sm:text-[24px] font-medium tracking-[0.02em] text-cream leading-none hover:text-gold transition-colors duration-300 whitespace-nowrap flex-shrink-0">
+            className="font-serif italic text-[24px] font-medium tracking-[0.02em] text-cream leading-none hover:text-gold transition-colors duration-300">
             Sandy Makeover
           </a>
 
           {/* Desktop links */}
-          <div className="hidden lg:flex items-center gap-8 xl:gap-10">
+          <div className="hidden md:flex items-center gap-10">
             {NAV_LINKS.map(({ label, href }) => (
               <a key={href} href={href} onClick={e => scrollTo(e, href)}
-                className="font-sans text-[10px] font-semibold tracking-[0.2em] uppercase text-cream/90 hover:text-gold transition-colors duration-300 whitespace-nowrap">
+                className="font-sans text-[10px] font-semibold tracking-[0.2em] uppercase text-cream/90 hover:text-gold transition-colors duration-300">
                 {label}
               </a>
             ))}
@@ -77,9 +77,8 @@ export default function Navbar() {
 
           {/* Desktop CTA */}
           <button onClick={() => window.dispatchEvent(new CustomEvent('open-booking-modal'))}
-            className="hidden md:inline-flex btn-gold-cta py-2 px-5 text-[10px] tracking-[0.16em] whitespace-nowrap flex-shrink-0">
-            <Sparkles className="w-3.5 h-3.5 text-dark fill-dark/30 flex-shrink-0" />
-            <span>Book Your Date</span>
+            className="hidden md:inline-flex btn-gold-cta py-2.5 px-6 text-[10px] tracking-[0.18em]">
+            Book Your Date
           </button>
 
           {/* Hamburger */}
@@ -106,8 +105,7 @@ export default function Navbar() {
           ))}
           <button onClick={() => { close(); window.dispatchEvent(new CustomEvent('open-booking-modal')) }}
             className="mt-4 btn-gold-cta py-3.5 px-8 text-[11px]">
-            <Sparkles className="w-4 h-4 text-dark fill-dark/30 flex-shrink-0" />
-            <span>Book Your Date</span>
+            Book Your Date
           </button>
         </div>
       </div>

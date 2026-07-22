@@ -31,8 +31,7 @@ export default function FloatingActions() {
             tabIndex={heroGone ? 0 : -1}
             aria-label="Book your date sticky button"
             className="w-full btn-gold-cta py-3.5 text-[11px] font-bold">
-            <Sparkles className="w-4 h-4 text-dark fill-dark/30 flex-shrink-0" />
-            <span>Book Your Date</span>
+            Book Your Date
           </button>
         </div>
       </div>
