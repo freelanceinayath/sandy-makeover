@@ -4,67 +4,27 @@ import { getStoredMedia } from './AdminMediaModal'
 
 function NativeVideoPlayer({ src, title }) {
   const videoRef = useRef(null)
-  const [isPlaying, setIsPlaying] = useState(false)
-  const [hasError, setHasError] = useState(false)
 
   useEffect(() => {
     if (videoRef.current) {
-      // Start muted autoplay to comply with Chrome & Safari autoplay policies
       videoRef.current.muted = true
-      videoRef.current.play()
-        .then(() => setIsPlaying(true))
-        .catch(() => setIsPlaying(false))
+      videoRef.current.loop = true
+      videoRef.current.play().catch(e => console.log('Autoplay muted play:', e))
     }
   }, [src])
 
-  const togglePlay = () => {
-    if (!videoRef.current) return
-    if (videoRef.current.paused) {
-      videoRef.current.muted = false // Unmute on user click
-      videoRef.current.play()
-        .then(() => setIsPlaying(true))
-        .catch(() => {})
-    } else {
-      videoRef.current.pause()
-      setIsPlaying(false)
-    }
-  }
-
-  if (hasError) {
-    return (
-      <div className="w-full h-full min-h-[320px] flex flex-col items-center justify-center p-6 text-center bg-dark-3 border border-border">
-        <Video className="w-10 h-10 text-gold mb-3 opacity-60" />
-        <p className="font-sans text-[13px] text-cream mb-2 font-medium">Bridal Video Reel</p>
-        <p className="font-sans text-[11px] text-cream/70 mb-4 max-w-[260px]">
-          Click below to watch this bridal transformation reel directly.
-        </p>
-        <a href={src} target="_blank" rel="noopener noreferrer" className="btn-gold-solid text-[9px] tracking-[0.2em] py-2.5 px-6 inline-flex items-center gap-2">
-          Watch Video Reel <ExternalLink className="w-3.5 h-3.5" />
-        </a>
-      </div>
-    )
-  }
-
   return (
-    <div className="relative w-full h-full bg-black flex items-center justify-center group cursor-pointer" onClick={togglePlay}>
+    <div className="relative w-full h-full bg-black flex items-center justify-center">
       <video
         ref={videoRef}
         src={src}
-        controls
+        autoPlay
+        muted
+        loop
         playsInline
-        onError={() => setHasError(true)}
-        onPlay={() => setIsPlaying(true)}
-        onPause={() => setIsPlaying(false)}
+        controls
         className="w-full h-full object-contain max-h-[65vh]"
       />
-      {!isPlaying && (
-        <div className="absolute inset-0 bg-black/50 flex flex-col items-center justify-center gap-2 pointer-events-none transition-all">
-          <div className="w-16 h-16 rounded-full bg-gold-gradient text-dark flex items-center justify-center shadow-luxury-lg transform scale-110">
-            <Play className="w-7 h-7 fill-dark ml-1" />
-          </div>
-          <span className="font-sans text-[10px] font-bold tracking-[0.2em] uppercase text-gold">Click to Unmute & Play</span>
-        </div>
-      )}
     </div>
   )
 }
@@ -97,7 +57,7 @@ function RenderVideoContent({ src, title }) {
     return (
       <div className="w-full h-full min-h-[360px] bg-black flex items-center justify-center">
         <iframe
-          src={`https://www.youtube.com/embed/${videoId}?autoplay=1`}
+          src={`https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&loop=1`}
           title={title || 'YouTube Short'}
           className="w-full h-[360px] border-0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -178,6 +138,7 @@ export default function Instagram() {
                 <>
                   <video
                     src={post.src}
+                    autoPlay
                     muted
                     loop
                     playsInline
@@ -208,7 +169,7 @@ export default function Instagram() {
                     <div className="w-11 h-11 rounded-full bg-gold-gradient flex items-center justify-center text-dark shadow-luxury-md transform group-hover:scale-110 transition-transform">
                       <Play className="w-5 h-5 fill-dark ml-0.5" />
                     </div>
-                    <span className="font-sans text-[10px] font-semibold tracking-[0.18em] uppercase text-gold mt-1">Play Video</span>
+                    <span className="font-sans text-[10px] font-semibold tracking-[0.18em] uppercase text-gold mt-1">Play Reel Video</span>
                   </>
                 ) : (
                   <>
