@@ -151,31 +151,31 @@ Please send me a quotation. - Sandy Makeover`
         }`}>
           
           {/* ── CARD FRONT: CALENDAR ── */}
-          <div className="absolute inset-0 w-full h-full bg-[#1E0B10] border border-border-light p-7 flex flex-col justify-between backface-hidden shadow-2xl">
+          <div className="absolute inset-0 w-full h-full bg-[#14070B]/95 backdrop-blur-2xl border border-gold/35 rounded-2xl p-7 flex flex-col justify-between backface-hidden shadow-2xl shadow-gold/10">
             <div>
               {/* Header */}
               <div className="flex justify-between items-center mb-4">
-                <span className="font-serif italic text-[22px] tracking-wide text-gold">Choose Your Date</span>
-                <button onClick={() => setIsOpen(false)} aria-label="Close modal" className="text-cream/50 hover:text-cream text-lg transition-colors p-1">✕</button>
+                <span className="font-serif italic text-[24px] tracking-wide text-gold">Choose Your Date</span>
+                <button onClick={() => setIsOpen(false)} aria-label="Close modal" className="text-white/60 hover:text-white text-lg transition-colors p-1">✕</button>
               </div>
 
               {errorMsg && !isFlipped && (
-                <p className="text-[11px] text-red-400 bg-red-950/40 border border-red-800/40 p-2 mb-3 text-center">{errorMsg}</p>
+                <p className="text-[11px] text-red-300 bg-red-950/60 border border-red-500/40 p-2 mb-3 rounded-lg text-center">{errorMsg}</p>
               )}
 
               {/* Month Switcher */}
-              <div className="flex justify-between items-center mb-5 bg-[#32131A]/30 py-2 px-3 border border-border/10">
-                <button onClick={handlePrevMonth} aria-label="Previous month" className="text-gold hover:text-gold-light text-[18px] px-2 transition-colors">‹</button>
-                <span className="font-sans text-[11px] font-semibold tracking-[0.2em] uppercase text-cream">
+              <div className="flex justify-between items-center mb-5 bg-white/5 py-2.5 px-4 rounded-xl border border-white/10">
+                <button onClick={handlePrevMonth} aria-label="Previous month" className="text-gold hover:text-gold-light text-[20px] font-bold px-2 transition-colors">‹</button>
+                <span className="font-sans text-[11px] font-bold tracking-[0.22em] uppercase text-white">
                   {months[currentDate.getMonth()]} {currentDate.getFullYear()}
                 </span>
-                <button onClick={handleNextMonth} aria-label="Next month" className="text-gold hover:text-gold-light text-[18px] px-2 transition-colors">›</button>
+                <button onClick={handleNextMonth} aria-label="Next month" className="text-gold hover:text-gold-light text-[20px] font-bold px-2 transition-colors">›</button>
               </div>
 
               {/* Weekday Labels */}
               <div className="grid grid-cols-7 gap-1 text-center mb-3">
                 {weekDays.map(day => (
-                  <span key={day} className="font-sans text-[9px] text-cream/30 font-semibold tracking-wider uppercase">{day}</span>
+                  <span key={day} className="font-sans text-[10px] text-white/50 font-bold tracking-wider uppercase">{day}</span>
                 ))}
               </div>
 
@@ -192,12 +192,12 @@ Please send me a quotation. - Sandy Makeover`
                       key={date.toISOString()}
                       onClick={() => handleDateSelect(date)}
                       disabled={isPast}
-                      className={`aspect-square rounded-none font-sans text-[11px] flex items-center justify-center transition-all duration-300 ${
+                      className={`aspect-square rounded-lg font-sans text-[11px] font-medium flex items-center justify-center transition-all duration-300 ${
                         isSelected 
-                          ? 'bg-gold text-[#1E0B10] font-semibold shadow-gold' 
+                          ? 'bg-gradient-to-r from-[#EAD8B1] via-[#C3A359] to-[#A0823E] text-[#1E0B10] font-bold shadow-lg shadow-gold/30 scale-105' 
                           : isPast 
-                            ? 'text-cream/15 cursor-not-allowed' 
-                            : 'text-cream/70 hover:bg-gold/10 hover:text-gold border border-transparent hover:border-gold/20'
+                            ? 'text-white/15 cursor-not-allowed' 
+                            : 'text-white/80 hover:bg-gold/20 hover:text-gold border border-transparent hover:border-gold/30'
                       }`}
                     >
                       {date.getDate()}
@@ -211,10 +211,10 @@ Please send me a quotation. - Sandy Makeover`
             <button
               onClick={handleNextClick}
               disabled={!selectedDate}
-              className={`w-full py-4 font-sans text-[10px] font-semibold tracking-[0.24em] uppercase transition-all duration-300 ${
+              className={`w-full py-3.5 ${
                 selectedDate
-                  ? 'bg-transparent border border-gold text-gold hover:bg-gold hover:text-[#1E0B10]'
-                  : 'bg-cream/5 border border-border/10 text-cream/25 cursor-not-allowed'
+                  ? 'btn-gold-cta text-[11px] font-bold'
+                  : 'bg-white/5 border border-white/10 text-white/25 cursor-not-allowed rounded-full font-sans text-[10px] font-semibold tracking-[0.24em] uppercase'
               }`}
             >
               Next Step →
@@ -222,75 +222,75 @@ Please send me a quotation. - Sandy Makeover`
           </div>
 
           {/* ── CARD BACK: FORM DETAILS ── */}
-          <div className="absolute inset-0 w-full h-full bg-[#1E0B10] border border-border-light p-7 flex flex-col justify-between backface-hidden rotate-y-180 shadow-2xl">
+          <div className="absolute inset-0 w-full h-full bg-[#14070B]/95 backdrop-blur-2xl border border-gold/35 rounded-2xl p-7 flex flex-col justify-between backface-hidden rotate-y-180 shadow-2xl shadow-gold/10">
             <form onSubmit={handleDone} className="h-full flex flex-col justify-between">
               <div>
                 {/* Header */}
-                <div className="flex justify-between items-center mb-4">
-                  <span className="font-serif italic text-[22px] tracking-wide text-gold">Booking Details</span>
-                  <button type="button" onClick={() => { setIsFlipped(false); setErrorMsg(''); }} className="font-sans text-[9px] tracking-widest text-gold hover:text-gold-light uppercase flex items-center gap-1 transition-colors">
+                <div className="flex justify-between items-center mb-5">
+                  <span className="font-serif italic text-[24px] tracking-wide text-gold">Booking Details</span>
+                  <button type="button" onClick={() => { setIsFlipped(false); setErrorMsg(''); }} className="font-sans text-[10px] tracking-widest text-gold hover:text-gold-light uppercase flex items-center gap-1 font-semibold transition-colors">
                     ← Back
                   </button>
                 </div>
 
                 {errorMsg && isFlipped && (
-                  <p className="text-[11px] text-red-400 bg-red-950/40 border border-red-800/40 p-2 mb-3 text-center">{errorMsg}</p>
+                  <p className="text-[11px] text-red-300 bg-red-950/60 border border-red-500/40 p-2 mb-3 rounded-lg text-center">{errorMsg}</p>
                 )}
 
                 {/* Form fields */}
                 <div className="flex flex-col gap-4">
                   {/* Name */}
                   <div className="flex flex-col">
-                    <label className="font-sans text-[9px] font-semibold tracking-[0.18em] text-gold/60 uppercase mb-1">Your Name</label>
+                    <label className="font-sans text-[10px] font-semibold tracking-[0.2em] text-white uppercase mb-1">Your Name</label>
                     <input
                       type="text"
                       required
                       placeholder="Enter full name"
                       value={name}
                       onChange={e => setName(e.target.value)}
-                      className="bg-transparent border-b border-border hover:border-gold/50 focus:border-gold text-cream text-[13px] py-2 outline-none transition-all duration-300 placeholder:text-cream/20"
+                      className="bg-white/5 border-b border-white/20 hover:border-gold focus:border-gold text-white font-sans text-[14px] py-2 px-3 rounded-t-md outline-none transition-all duration-300 placeholder:text-white/35"
                     />
                   </div>
 
                   {/* Mobile Number */}
                   <div className="flex flex-col">
-                    <label className="font-sans text-[9px] font-semibold tracking-[0.18em] text-gold/60 uppercase mb-1">Mobile Number</label>
+                    <label className="font-sans text-[10px] font-semibold tracking-[0.2em] text-white uppercase mb-1">Mobile Number</label>
                     <input
                       type="tel"
                       required
                       placeholder="Enter active mobile number"
                       value={mobile}
                       onChange={e => setMobile(e.target.value)}
-                      className="bg-transparent border-b border-border hover:border-gold/50 focus:border-gold text-cream text-[13px] py-2 outline-none transition-all duration-300 placeholder:text-cream/20"
+                      className="bg-white/5 border-b border-white/20 hover:border-gold focus:border-gold text-white font-sans text-[14px] py-2 px-3 rounded-t-md outline-none transition-all duration-300 placeholder:text-white/35"
                     />
                   </div>
 
                   {/* Location */}
                   <div className="flex flex-col">
-                    <label className="font-sans text-[9px] font-semibold tracking-[0.18em] text-gold/60 uppercase mb-1">Wedding Location</label>
+                    <label className="font-sans text-[10px] font-semibold tracking-[0.2em] text-white uppercase mb-1">Wedding Location</label>
                     <input
                       type="text"
                       required
                       placeholder="Enter venue or city"
                       value={location}
                       onChange={e => setLocation(e.target.value)}
-                      className="bg-transparent border-b border-border hover:border-gold/50 focus:border-gold text-cream text-[13px] py-2 outline-none transition-all duration-300 placeholder:text-cream/20"
+                      className="bg-white/5 border-b border-white/20 hover:border-gold focus:border-gold text-white font-sans text-[14px] py-2 px-3 rounded-t-md outline-none transition-all duration-300 placeholder:text-white/35"
                     />
                   </div>
 
                   {/* Category Selection */}
                   <div className="flex flex-col">
-                    <label className="font-sans text-[9px] font-semibold tracking-[0.18em] text-gold/60 uppercase mb-2">Booking Category</label>
+                    <label className="font-sans text-[10px] font-semibold tracking-[0.2em] text-white uppercase mb-2">Booking Category</label>
                     <div className="grid grid-cols-3 gap-2">
                       {['bride', 'groom', 'both'].map(cat => (
                         <button
                           key={cat}
                           type="button"
                           onClick={() => setCategory(cat)}
-                          className={`py-2.5 text-[10px] font-sans border transition-all duration-300 tracking-[0.14em] uppercase ${
+                          className={`py-2.5 text-[10px] font-sans border transition-all duration-300 tracking-[0.16em] uppercase rounded-lg ${
                             category === cat
-                              ? 'bg-gold/10 text-gold border-gold font-medium'
-                              : 'bg-transparent border-border text-cream/40 hover:border-gold/30'
+                              ? 'bg-gradient-to-r from-[#EAD8B1] via-[#C3A359] to-[#A0823E] text-[#1E0B10] border-transparent font-bold shadow-md shadow-gold/20'
+                              : 'bg-white/5 border-white/20 text-white/70 hover:border-gold hover:text-white'
                           }`}
                         >
                           {cat}
@@ -301,15 +301,15 @@ Please send me a quotation. - Sandy Makeover`
 
                   {/* Custom Hair Artistry Toggle */}
                   <div 
-                    className="flex items-center gap-3 mt-2 cursor-pointer select-none"
+                    className="flex items-center gap-3 mt-1 cursor-pointer select-none py-1"
                     onClick={() => setHairArtistry(h => !h)}
                   >
-                    <div className={`w-4 h-4 border flex items-center justify-center transition-all duration-300 ${
-                      hairArtistry ? 'border-gold bg-gold text-[#1E0B10]' : 'border-border bg-transparent'
+                    <div className={`w-4 h-4 border rounded-sm flex items-center justify-center transition-all duration-300 ${
+                      hairArtistry ? 'border-gold bg-gold text-[#1E0B10]' : 'border-white/30 bg-white/5'
                     }`}>
                       {hairArtistry && <span className="text-[10px] font-bold">✓</span>}
                     </div>
-                    <span className="font-sans text-[11px] text-cream/60">
+                    <span className="font-sans text-[12px] font-medium text-white">
                       Include Professional Hair Artistry
                     </span>
                   </div>
@@ -319,7 +319,7 @@ Please send me a quotation. - Sandy Makeover`
               {/* Submit Button */}
               <button
                 type="submit"
-                className="w-full py-4 bg-transparent border border-gold text-gold hover:bg-gold hover:text-[#1E0B10] font-sans text-[10px] font-semibold tracking-[0.24em] uppercase transition-all duration-300 shadow-luxury-md mt-8"
+                className="w-full btn-gold-cta py-4 text-[11px] font-bold tracking-[0.22em] uppercase mt-6"
               >
                 Complete Booking ✓
               </button>
