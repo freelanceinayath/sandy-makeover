@@ -85,12 +85,11 @@ export default function Footer() {
           </p>
           <div className="flex items-center gap-4">
             <button
-              onClick={() => window.dispatchEvent(new CustomEvent('open-admin-media-modal'))}
-              className="font-sans text-[10px] text-gold/70 hover:text-gold tracking-widest uppercase transition-colors"
+              onClick={() => window.dispatchEvent(new CustomEvent('open-admin-modal'))}
+              className="font-sans text-[10px] font-medium tracking-wider uppercase text-cream/40 hover:text-gold transition-colors"
             >
-              🔒 Admin Video Manager
+              🔒 Admin Photo Manager
             </button>
-            <span className="text-cream/20">•</span>
             <p className="font-sans text-[11px] font-light text-cream/60">Crafted with love for every bride.</p>
           </div>
         </div>
