@@ -76,7 +76,7 @@ export default function Navbar() {
 
           {/* Desktop CTA */}
           <button onClick={() => window.dispatchEvent(new CustomEvent('open-booking-modal'))}
-            className="hidden md:inline-flex btn-gold-cta py-2.5 px-6 text-[10px] tracking-[0.18em]">
+            className="nav-desktop-cta btn-gold-cta py-2.5 px-6 text-[10px] tracking-[0.18em]">
             Book Your Date
           </button>
 

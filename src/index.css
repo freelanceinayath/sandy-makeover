@@ -203,9 +203,14 @@
     outline-offset: 4px;
   }
 
-  @keyframes goldShimmer {
-    0% { transform: translateX(-100%) rotate(30deg); }
-    30%, 100% { transform: translateX(100%) rotate(30deg); }
+  /* Ensure header desktop CTA is strictly hidden on mobile (<768px) */
+  .nav-desktop-cta {
+    display: none !important;
+  }
+  @media (min-width: 768px) {
+    .nav-desktop-cta {
+      display: inline-flex !important;
+    }
   }
 
   /* ── Gold border button ── */
