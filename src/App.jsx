@@ -5,6 +5,7 @@ import Footer          from './components/Footer'
 import FloatingActions from './components/FloatingActions'
 import PageLoader      from './components/PageLoader'
 import CustomCursor    from './components/CustomCursor'
+import AdminMediaModal from './components/AdminMediaModal'
 
 function MainLayout() {
   return (
@@ -28,6 +29,9 @@ function MainLayout() {
 
       {/* WhatsApp float + mobile sticky CTA */}
       <FloatingActions />
+
+      {/* Secret Admin Video & Media Manager */}
+      <AdminMediaModal />
     </>
   )
 }
