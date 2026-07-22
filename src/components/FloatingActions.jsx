@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { Sparkles } from 'lucide-react'
 
 export default function FloatingActions() {
   const [heroGone, setHeroGone] = useState(false)
@@ -29,8 +30,9 @@ export default function FloatingActions() {
           <button onClick={() => window.dispatchEvent(new CustomEvent('open-booking-modal'))} id="sticky-book-btn"
             tabIndex={heroGone ? 0 : -1}
             aria-label="Book your date sticky button"
-            className="block w-full py-4 bg-transparent border border-border-light text-cream text-center font-sans text-[11px] font-semibold tracking-[0.18em] uppercase hover:bg-gold hover:border-gold hover:text-dark transition-all duration-300">
-            Book Your Date
+            className="w-full btn-gold-cta py-3.5 text-[11px] font-bold">
+            <Sparkles className="w-4 h-4 text-dark fill-dark/30 flex-shrink-0" />
+            <span>Book Your Date</span>
           </button>
         </div>
       </div>

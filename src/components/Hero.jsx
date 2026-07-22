@@ -1,4 +1,5 @@
 import { useEffect, useState, useRef } from 'react'
+import { Sparkles } from 'lucide-react'
 
 const WA_LINK = 'https://wa.me/917092368305'
 
@@ -132,9 +133,10 @@ export default function Hero() {
         {/* Call to actions (Now placed above the subtitle) */}
         <div className={cls(step >= 5, 'flex justify-center items-center mb-8')}>
           <button onClick={() => window.dispatchEvent(new CustomEvent('open-booking-modal'))} id="hero-book-btn"
-            className="btn-outline-gold text-[10px] tracking-[0.2em] font-semibold py-3.5 px-8 hover:bg-gold hover:text-dark transition-all duration-300"
+            className="btn-gold-cta text-[11px] tracking-[0.22em] font-bold py-4 px-9 shadow-luxury-lg"
             aria-label="Book your bridal makeup date">
-            Book Your Date
+            <Sparkles className="w-4 h-4 text-dark fill-dark/30 flex-shrink-0" />
+            <span>Book Your Date</span>
           </button>
         </div>
 

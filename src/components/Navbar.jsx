@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
+import { Sparkles } from 'lucide-react'
 
 const WA_NUMBER = '917092368305'
 const WA_LINK   = `https://wa.me/${WA_NUMBER}`
@@ -76,8 +77,9 @@ export default function Navbar() {
 
           {/* Desktop CTA */}
           <button onClick={() => window.dispatchEvent(new CustomEvent('open-booking-modal'))}
-            className="hidden md:inline-flex items-center gap-2 font-sans text-[10px] font-semibold tracking-[0.2em] uppercase px-6 py-2.5 border border-border text-cream hover:bg-gold hover:border-gold hover:text-dark transition-all duration-300">
-            Book your date
+            className="hidden md:inline-flex btn-gold-cta py-2.5 px-6 text-[10px] tracking-[0.18em]">
+            <Sparkles className="w-3.5 h-3.5 text-dark fill-dark/30 flex-shrink-0" />
+            <span>Book Your Date</span>
           </button>
 
           {/* Hamburger */}
@@ -103,8 +105,9 @@ export default function Navbar() {
             </a>
           ))}
           <button onClick={() => { close(); window.dispatchEvent(new CustomEvent('open-booking-modal')) }}
-            className="mt-4 btn-outline-gold">
-            Book your date
+            className="mt-4 btn-gold-cta py-3.5 px-8 text-[11px]">
+            <Sparkles className="w-4 h-4 text-dark fill-dark/30 flex-shrink-0" />
+            <span>Book Your Date</span>
           </button>
         </div>
       </div>
