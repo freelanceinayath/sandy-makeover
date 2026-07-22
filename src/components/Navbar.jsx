@@ -1,5 +1,4 @@
-import { useState, useEffect, useRef } from 'react'
-import { Sparkles } from 'lucide-react'
+import { useState, useEffect } from 'react'
 
 const WA_NUMBER = '917092368305'
 const WA_LINK   = `https://wa.me/${WA_NUMBER}`
@@ -56,9 +55,9 @@ export default function Navbar() {
   return (
     <>
       <nav className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ${
-        scrolled ? 'bg-dark/95 backdrop-blur-xl border-b border-border py-3' : 'bg-transparent py-5'
+        scrolled ? 'bg-dark/95 backdrop-blur-xl border-b border-border py-2.5 md:py-3.5' : 'bg-transparent py-3.5 md:py-5'
       }`}>
-        <div className="max-w-[1200px] mx-auto px-5 flex items-center justify-between">
+        <div className="max-w-[1200px] mx-auto px-4 sm:px-6 flex items-center justify-between">
           {/* Logo */}
           <a href="#home" onClick={e => scrollTo(e,'#home')}
             className="font-serif italic text-[24px] font-medium tracking-[0.02em] text-cream leading-none hover:text-gold transition-colors duration-300">
