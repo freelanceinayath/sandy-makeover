@@ -83,15 +83,7 @@ export default function Footer() {
               Developed by inayathbasha.vercel.app
             </a>
           </p>
-          <div className="flex items-center gap-4">
-            <button
-              onClick={() => window.dispatchEvent(new CustomEvent('open-admin-modal'))}
-              className="font-sans text-[10px] font-medium tracking-wider uppercase text-cream/40 hover:text-gold transition-colors"
-            >
-              🔒 Admin Photo Manager
-            </button>
-            <p className="font-sans text-[11px] font-light text-cream/60">Crafted with love for every bride.</p>
-          </div>
+          <p className="font-sans text-[11px] font-light text-cream/60">Crafted with love for every bride.</p>
         </div>
       </div>
     </footer>

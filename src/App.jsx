@@ -5,7 +5,6 @@ import Footer          from './components/Footer'
 import FloatingActions from './components/FloatingActions'
 import PageLoader      from './components/PageLoader'
 import CustomCursor    from './components/CustomCursor'
-import AdminModal      from './components/AdminModal'
 
 function MainLayout() {
   return (
@@ -29,9 +28,6 @@ function MainLayout() {
 
       {/* WhatsApp float + mobile sticky CTA */}
       <FloatingActions />
-
-      {/* Admin Image Manager Modal */}
-      <AdminModal />
     </>
   )
 }

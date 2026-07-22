@@ -81,6 +81,13 @@
   }
   .reveal-left.in-view { opacity: 1; transform: translateX(0); }
 
+  @media (prefers-reduced-motion: reduce) {
+    .reveal, .reveal-scale, .reveal-left {
+      opacity: 1 !important;
+      transform: none !important;
+    }
+  }
+
   /* Delay helpers */
   .delay-100 { transition-delay: 100ms; }
   .delay-150 { transition-delay: 150ms; }
