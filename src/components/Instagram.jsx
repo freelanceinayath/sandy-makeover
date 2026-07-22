@@ -33,21 +33,22 @@ export default function Instagram() {
           Wedding Stories
         </p>
         
-        <div className="flex flex-wrap items-center justify-center gap-4 mt-7 reveal delay-200" data-reveal>
+        <div className="flex flex-wrap items-center justify-center gap-4 mt-7">
           <a href="https://instagram.com/sandymakeover" target="_blank" rel="noopener noreferrer"
             id="instagram-follow-btn"
-            className="inline-flex items-center gap-3 font-sans text-[10px] font-medium tracking-[0.2em] uppercase text-gold border border-border-light px-6 py-3 hover:bg-gold hover:text-dark transition-all duration-300">
+            className="inline-flex items-center gap-3 font-sans text-[10px] font-semibold tracking-[0.2em] uppercase text-gold border border-border-light px-6 py-3 hover:bg-gold hover:text-dark transition-all duration-300">
             <img src="/instagram_logo.png" alt="Instagram Logo" className="w-[18px] h-[18px] object-contain rounded-md" loading="lazy" decoding="async" />
             Follow on Instagram
           </a>
 
-          {/* Admin Video Manager Trigger */}
+          {/* Prominent Admin Video Manager Trigger */}
           <button
             onClick={handleOpenAdmin}
-            className="inline-flex items-center gap-2 font-sans text-[10px] font-semibold tracking-[0.18em] uppercase text-cream/80 bg-[#32131A]/60 border border-gold/40 px-5 py-3 hover:bg-gold hover:text-dark hover:border-gold transition-all duration-300 shadow-luxury-sm"
+            id="admin-video-upload-btn"
+            className="inline-flex items-center gap-2 font-sans text-[10px] font-bold tracking-[0.18em] uppercase text-dark bg-gold border border-gold px-6 py-3 hover:bg-gold-light transition-all duration-300 shadow-luxury-md cursor-pointer"
           >
-            <Video className="w-4 h-4 text-gold group-hover:text-dark" />
-            Upload Video / Manage
+            <Video className="w-4 h-4 text-dark fill-dark" />
+            📹 Upload Video / Admin Manager
           </button>
         </div>
       </div>

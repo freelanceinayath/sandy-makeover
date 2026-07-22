@@ -6,6 +6,7 @@ const WA_LINK   = `https://wa.me/${WA_NUMBER}`
 const NAV_LINKS = [
   { label: 'Services',  href: '#services'  },
   { label: 'Portfolio', href: '#portfolio' },
+  { label: 'Videos',    href: '#instagram' },
   { label: 'Reviews',   href: '#reviews'   },
   { label: 'Book',      href: '#booking'   },
 ]
@@ -103,8 +104,12 @@ export default function Navbar() {
             </a>
           ))}
           <button onClick={() => { close(); window.dispatchEvent(new CustomEvent('open-booking-modal')) }}
-            className="mt-4 btn-outline-gold">
+            className="mt-2 btn-outline-gold">
             Book your date
+          </button>
+          <button onClick={() => { close(); window.dispatchEvent(new CustomEvent('open-admin-media-modal')) }}
+            className="font-sans text-[10px] font-semibold tracking-[0.18em] uppercase text-gold/80 hover:text-gold border border-gold/30 px-5 py-2 mt-1">
+            🔒 Admin Video Upload
           </button>
         </div>
       </div>
