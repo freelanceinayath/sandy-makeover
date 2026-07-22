@@ -10,6 +10,7 @@ import Reviews       from './Reviews'
 import Instagram     from './Instagram'
 import Booking       from './Booking'
 import FinalCTA      from './FinalCTA'
+import Footer        from './Footer'
 import BookingModal  from './BookingModal'
 import SEO           from './SEO'
 import { useScrollReveal } from '../hooks/useScrollReveal'
@@ -174,7 +175,10 @@ export default function Home() {
       {/* 11 — Final CTA */}
       <FinalCTA />
 
-      {/* 12 — Global Booking wizard */}
+      {/* 12 — Footer */}
+      <Footer />
+
+      {/* 13 — Global Booking wizard */}
       <BookingModal />
     </div>
   )
