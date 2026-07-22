@@ -5,7 +5,7 @@ export default function SEO({
   description, 
   canonical = '/', 
   type = 'website', 
-  image = '/hero_bride_real.png',
+  image = '/owner.jpg',
   schema 
 }) {
   const siteUrl = 'https://sandymakeover.vercel.app';
