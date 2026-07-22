@@ -3,19 +3,24 @@ import path from 'path';
 
 const today = new Date().toISOString().split('T')[0];
 
-const routes = [
-  { path: '/', priority: '1.0' }
-];
-
 const sitemapContent = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${routes.map(route => `  <url>
-    <loc>https://sandymakeover.vercel.app${route.path}</loc>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://sandymakeover.vercel.app/</loc>
     <lastmod>${today}</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>${route.priority}</priority>
-  </url>`).join('\n')}
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://sandymakeover.vercel.app/owner.jpg</image:loc>
+      <image:title>Sandy Makeover — Luxury Bridal Makeup Artist &amp; Stylist Chennai</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://sandymakeover.vercel.app/hero_bride_real.png</image:loc>
+      <image:title>Sandy Makeover Bridal Hair Artistry &amp; Makeup Looks</image:title>
+    </image:image>
+  </url>
 </urlset>`;
 
 fs.writeFileSync(path.resolve('public', 'sitemap.xml'), sitemapContent);
-console.log('Sitemap.xml generated successfully in public/ folder!');
+console.log('Sitemap.xml generated successfully with image metadata!');

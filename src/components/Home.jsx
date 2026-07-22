@@ -84,6 +84,30 @@ export default function Home() {
         }
       },
       {
+        "@type": "Person",
+        "@id": "https://sandymakeover.vercel.app/#artist",
+        "name": "Sandy",
+        "jobTitle": "Lead Luxury Bridal Makeup Artist & Stylist",
+        "worksFor": {
+          "@id": "https://sandymakeover.vercel.app/#salon"
+        },
+        "image": "https://sandymakeover.vercel.app/owner.jpg",
+        "sameAs": [
+          "https://instagram.com/sandymakeover"
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Sandy Makeover Home",
+            "item": "https://sandymakeover.vercel.app/"
+          }
+        ]
+      },
+      {
         "@type": "FAQPage",
         "mainEntity": [
           {
