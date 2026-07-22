@@ -30,7 +30,7 @@ export default function PageLoader() {
           </div>
         </div>
 
-        <span className="font-sans text-[10px] font-semibold tracking-[0.48em] uppercase text-gold/70">LUXURY BRIDAL STUDIO</span>
+        <span className="font-sans text-[10px] font-semibold tracking-[0.48em] uppercase text-white">LUXURY BRIDAL STUDIO</span>
         <span className="font-serif italic text-[40px] font-medium text-gold mt-1 tracking-wide" style={{ textShadow: '0 4px 20px rgba(195,163,89,0.3)' }}>Sandy Makeover</span>
         
         {/* Glowing Gold Progress Line Track */}
