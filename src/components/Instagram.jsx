@@ -1,12 +1,12 @@
 import { Eye } from 'lucide-react'
 
 const INSTA = [
-  { src:'/portfolio_1.png', alt:'Bridal look', type: 'image' },
-  { src:'/portfolio_2.png', alt:'Eye makeup', type: 'image' },
-  { src:'/bridal_makeup.png', alt:'Bridal beauty', type: 'image' },
-  { src:'/portfolio_3.png', alt:'Hair styling', type: 'image' },
-  { src:'/portfolio_4.png', alt:'Full bridal', type: 'image' },
-  { src:'/hair_styling.png',  alt:'Hair artistry', type: 'image' },
+  { src:'/insta_hair_1.jpg', alt:'Sandy Makeover half-up bridal curls with floral accessory', type: 'image' },
+  { src:'/insta_hair_2.jpg', alt:'Sandy Makeover intricate braid with pearl detailing', type: 'image' },
+  { src:'/insta_hair_3.jpg', alt:'Sandy Makeover textured high bun bridal updo', type: 'image' },
+  { src:'/portfolio_1.png', alt:'Sandy Makeover luxury bridal HD makeup look', type: 'image' },
+  { src:'/portfolio_2.png', alt:'Sandy Makeover bridal eye makeup artistry', type: 'image' },
+  { src:'/portfolio_3.png', alt:'Sandy Makeover South Indian bridal styling', type: 'image' },
 ]
 
 export default function Instagram() {
