@@ -281,6 +281,26 @@
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
   }
+
+  /* ── Animated Luxury Gold Preloader Ring ── */
+  @keyframes spinSlow {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  @keyframes goldGlowPulse {
+    0%, 100% {
+      box-shadow: 0 0 20px rgba(195,163,89,0.4), 0 0 40px rgba(195,163,89,0.2);
+    }
+    50% {
+      box-shadow: 0 0 35px rgba(195,163,89,0.7), 0 0 60px rgba(234,216,177,0.4);
+    }
+  }
+  .animate-spin-slow {
+    animation: spinSlow 8s linear infinite;
+  }
+  .animate-gold-glow {
+    animation: goldGlowPulse 2s ease-in-out infinite;
+  }
   .rotate-y-180 {
     transform: rotateY(180deg);
   }

@@ -17,14 +17,25 @@ export default function PageLoader() {
       phase === 'exit' ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}>
       <div className={`flex flex-col items-center gap-1 transition-all duration-600 ${
         phase === 'enter' ? 'opacity-0 translate-y-4' : 'opacity-100 translate-y-0'}`}>
-        {/* Owner Photo Circle */}
-        <div className="w-[100px] h-[100px] rounded-full border border-gold/30 overflow-hidden mb-6 shadow-luxury-md">
-          <img src="/owner.jpg" alt="Sandy Makeover Owner" className="w-full h-full object-cover" />
+        {/* Animated Gold Ring & Owner Photo Container */}
+        <div className="relative flex items-center justify-center mb-7">
+          {/* Outer Rotating Dashed Gold Ring */}
+          <div className="absolute w-[128px] h-[128px] rounded-full border-2 border-dashed border-gold/60 animate-spin-slow pointer-events-none" />
+          
+          {/* Inner Glowing Metallic Gold Gradient Ring */}
+          <div className="w-[114px] h-[114px] rounded-full p-[3px] bg-gradient-to-tr from-[#EAD8B1] via-[#C3A359] to-[#A0823E] animate-gold-glow flex items-center justify-center">
+            <div className="w-full h-full rounded-full overflow-hidden bg-[#0A0402] border border-dark/60">
+              <img src="/owner.jpg" alt="Sandy Makeover Owner" className="w-full h-full object-cover scale-105" />
+            </div>
+          </div>
         </div>
-        <span className="font-sans text-[9px] font-medium tracking-[0.45em] uppercase text-cream/25">LUXURY BRIDAL STUDIO</span>
-        <span className="font-serif italic text-[38px] font-medium text-gold mt-1">Sandy Makeover</span>
-        <div className="mt-6 w-20 h-px bg-cream/10 overflow-hidden">
-          <div className="h-full bg-gold transition-all duration-[1400ms] ease-out"
+
+        <span className="font-sans text-[10px] font-semibold tracking-[0.48em] uppercase text-gold/70">LUXURY BRIDAL STUDIO</span>
+        <span className="font-serif italic text-[40px] font-medium text-gold mt-1 tracking-wide" style={{ textShadow: '0 4px 20px rgba(195,163,89,0.3)' }}>Sandy Makeover</span>
+        
+        {/* Glowing Gold Progress Line Track */}
+        <div className="mt-6 w-24 h-[2px] bg-white/10 rounded-full overflow-hidden relative shadow-gold">
+          <div className="h-full bg-gradient-to-r from-[#EAD8B1] via-[#C3A359] to-[#A0823E] transition-all duration-[1400ms] ease-out shadow-[0_0_12px_#C3A359]"
             style={{ width: phase === 'visible' ? '100%' : '0%' }} />
         </div>
       </div>
