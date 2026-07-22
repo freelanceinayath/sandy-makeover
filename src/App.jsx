@@ -4,7 +4,8 @@ import Home            from './components/Home'
 import Footer          from './components/Footer'
 import FloatingActions from './components/FloatingActions'
 import PageLoader      from './components/PageLoader'
-import AdminModal from './components/AdminModal'
+import CustomCursor    from './components/CustomCursor'
+import AdminModal      from './components/AdminModal'
 
 function MainLayout() {
   return (
