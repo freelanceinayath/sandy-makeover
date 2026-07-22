@@ -1,31 +1,25 @@
 {
-  "short_name": "Inayath Basha",
-  "name": "Inayath Basha | Shopify Developer & Web Designer",
-  "description": "Professional portfolio of Inayath Basha, specialized in Shopify Development, React, and UI/UX Design.",
-  "categories": ["portfolio", "design", "development", "ecommerce"],
+  "short_name": "Sandy Makeover",
+  "name": "Sandy Makeover — Luxury Bridal Makeup & Hair Artistry",
+  "description": "Premium luxury bridal makeup, groom styling, and hair artistry in Chennai.",
+  "categories": ["bridal", "makeup", "beauty", "wedding"],
   "icons": [
     {
-      "src": "/favicon.svg",
-      "type": "image/svg+xml",
-      "sizes": "any",
-      "purpose": "any"
-    },
-    {
-      "src": "/favicon.svg",
-      "type": "image/svg+xml",
+      "src": "/favicon.png",
+      "type": "image/png",
       "sizes": "192x192",
-      "purpose": "maskable"
+      "purpose": "any"
     },
     {
-      "src": "/favicon.svg",
-      "type": "image/svg+xml",
+      "src": "/favicon.png",
+      "type": "image/png",
       "sizes": "512x512",
-      "purpose": "any"
+      "purpose": "maskable"
     }
   ],
   "start_url": "/",
-  "background_color": "#0a0f1e",
-  "theme_color": "#0a0f1e",
+  "background_color": "#1E0B10",
+  "theme_color": "#1E0B10",
   "display": "standalone",
   "orientation": "portrait"
 }
