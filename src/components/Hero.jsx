@@ -59,8 +59,8 @@ export default function Hero() {
       <div className="absolute inset-0 bg-gradient-to-b from-dark via-dark-2 to-dark pointer-events-none" />
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-gold/5 blur-[130px] pointer-events-none" />
 
-      {/* ── Polaroid Stack (Responsive and perfectly bounded) ── */}
-      <div className={`relative w-full max-w-[340px] xs:max-w-[380px] sm:max-w-[420px] aspect-[4/3] mx-auto mb-10 transition-all duration-1000 ${
+      {/* ── Polaroid Stack (Responsive and perfectly bounded above text) ── */}
+      <div className={`relative w-full max-w-[320px] sm:max-w-[380px] md:max-w-[420px] aspect-[16/10] mx-auto mb-6 md:mb-10 transition-all duration-1000 ${
         step >= 1 ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
       }`}>
         {POLAROIDS.map((p, i) => (
@@ -68,9 +68,9 @@ export default function Hero() {
             key={p.caption}
             className="polaroid absolute"
             style={{
-              width: i === 1 ? '32%' : '30%',
-              left: i === 0 ? '4%' : i === 1 ? '34%' : '66%',
-              top: i === 0 ? '12%' : i === 1 ? '32%' : '6%',
+              width: i === 1 ? '34%' : '32%',
+              left: i === 0 ? '2%' : i === 1 ? '33%' : '65%',
+              top: i === 0 ? '4%' : i === 1 ? '10%' : '2%',
               rotate: p.rotate,
               zIndex: p.isCenter ? 10 : 1,
               animation: `float ${6 + i * 1.5}s ease-in-out infinite`,
